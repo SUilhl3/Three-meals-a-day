@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5d0d48200c4094894f6c9ffc07a6dc, type: 3}
+  m_Name: Bread
+  m_EditorClassIdentifier: Assembly-CSharp::Recipe
+  recipeName: Bread
+  steps: 5
+  stepsList:
+  - stepName: Add Milk
+    instructions: Pour milk into the mixing bowl
+    ingredient: Milk
+    utensil: Mixing Bowl
+  - stepName: Add Yeast
+    instructions: Pour yeast into the mixing bowl
+    ingredient: Yeast
+    utensil: Mixing Bowl
+  - stepName: Add Sugar
+    instructions: Pour sugar into mixing bowl
+    ingredient: Sugar
+    utensil: Mixing Bowl
+  - stepName: Mix ingredients
+    instructions: Mix the ingredients in the mixing bowl
+    ingredient: 
+    utensil: Whisk
+  - stepName: Break Egg
+    instructions: Break the egg on the mixing bowl
+    ingredient: Egg
+    utensil: Mixing Bowl
+  - stepName: Add egg
+    instructions: Extract the yolk into the mixing bowl
+    ingredient: Yolk
+    utensil: Mixing Bowl
+  - stepName: Remove Shells
+    instructions: Remove any egg shells from the mixture
+    ingredient: 
+    utensil: 
+  - stepName: Beat the egg
+    instructions: Beat the egg in the mixture
+    ingredient: 
+    utensil: Whisk
+  - stepName: 'Leave the mixture alone '
+    instructions: Leave the mixture alone for 5 mins
+    ingredient: 
+    utensil: 
+  - stepName: Add Salt
+    instructions: Add Salt to the mixture
+    ingredient: Salt
+    utensil: Mixing Bowl
+  - stepName: Add Flour
+    instructions: Add flour to the mixture
+    ingredient: Flour
+    utensil: Mixing Bowl
+  - stepName: Mix the ingredients again
+    instructions: Mix the mixture into dough
+    ingredient: 
+    utensil: Spatula
+  - stepName: Knead the bread
+    instructions: Knead the bread for 10-15 mins
+    ingredient: Dough
+    utensil: Hands
+  - stepName: Add Butter
+    instructions: Add butter to the dough
+    ingredient: Butter
+    utensil: 
+  - stepName: Knead Bread with Butter
+    instructions: Knead the bread again for another 10 mins. Make sure the butter
+      is completely mixed in with the dough
+    ingredient: 
+    utensil: Hands
+  - stepName: Leave Dough
+    instructions: 'Cover the bread and let it rise until the dough is double it''s
+      original size '
+    ingredient: 
+    utensil: 
+  - stepName: Squeeze gas out of dough
+    instructions: Squeeze the dough to remove any gas out of it
+    ingredient: 
+    utensil: Hands
+  - stepName: Divide dough
+    instructions: Divide the dough into 6 pieces
+    ingredient: 
+    utensil: Hands
+  - stepName: Roll the dough
+    instructions: 'Roll the dough into balls '
+    ingredient: 
+    utensil: Hands
+  - stepName: Let it rise again
+    instructions: Cover the dough balls and let them rise for an hour
+    ingredient: 
+    utensil: Hands
+  - stepName: Pre-heat oven
+    instructions: Pre-heat the oven to 170 degrees celsius
+    ingredient: 
+    utensil: Oven
+  - stepName: Bake bread
+    instructions: Open the oven and place the bread inside
+    ingredient: 
+    utensil: Oven
+  - stepName: Wait for bread
+    instructions: Let the bread bake for about 15 mins
+    ingredient: 
+    utensil: Oven
+  - stepName: Remove Bread from Oven
+    instructions: Open the oven and remove the bread
+    ingredient: 
+    utensil: Oven
+  - stepName: Place bread at serving station
+    instructions: Place the bread on the plate
+    ingredient: 
+    utensil: Plate
