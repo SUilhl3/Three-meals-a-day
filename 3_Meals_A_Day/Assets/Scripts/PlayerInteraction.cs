@@ -1,5 +1,7 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -11,6 +13,8 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject recipePanel;
     public List<GameObject> ingredients; //list of ingredient prefabs 
     public Button mixButton;
+    public Recipe recipe;
+    int currentRecipeStep = 0;
 
     //Called when the player clicks the mouse, will move the camera to the position of the station clicked on
     public void Click(InputAction.CallbackContext context)
@@ -31,6 +35,7 @@ public class PlayerInteraction : MonoBehaviour
                 if(station.isCookingStation)
                 {
                     mixButton.gameObject.SetActive(true);
+                    mixButton.GetComponentInChildren<TextMeshProUGUI>().text = station.buttonText;
                 }
                 else
                 {
@@ -66,7 +71,35 @@ public class PlayerInteraction : MonoBehaviour
 
     public void MixIngredients()
     {
-        //do something
-        Debug.Log("Mixing Ingredients");
+       currentRecipeStep = BreadSequenceManager.Instance.currentStep; 
+       GameObject needed = recipe.stepsList[currentRecipeStep].ingredientNeeded;
+
+        //if no gameobject specified as needed, will do another action instead of mixing 
+        if (needed == null)
+        {
+            Debug.Log("No ingredient needed for this step");
+            OtherCookingAction();
+            return;
+        }
+
+        //check if needed ingredient is in the list of ingredients, if so complete the step and move to the next one, if not display message that ingredient is missing
+        foreach (GameObject ingredient in ingredients)
+        {
+            if(ingredient == needed)
+            {
+                Debug.Log("Adding Ingredient");
+                BreadSequenceManager.Instance.pressedButton();
+                return;
+            }
+        }
+        Debug.Log("Missing ingredient");
+    }
+
+    public void OtherCookingAction()
+    {
+        //do something 
+        string t = recipe.stepsList[currentRecipeStep].stepName;
+        Debug.Log("Completed: " + t);
+        BreadSequenceManager.Instance.pressedButton();
     }
 }

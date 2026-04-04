@@ -963,6 +963,7 @@ MonoBehaviour:
   recipePanel: {fileID: 1142865914}
   ingredients: []
   mixButton: {fileID: 480673912}
+  recipe: {fileID: 11400000, guid: 6f81a370ccd6a354dacc90147dd3c8dc, type: 2}
 --- !u!114 &162720219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2071,6 +2072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KitchenStation
   cameraPoint: {fileID: 179465978}
   isCookingStation: 0
+  buttonText: 
 --- !u!65 &349823816
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4889,6 +4891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KitchenStation
   cameraPoint: {fileID: 683434674}
   isCookingStation: 1
+  buttonText: Mix
 --- !u!1 &1120611872
 GameObject:
   m_ObjectHideFlags: 0
@@ -5835,6 +5838,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KitchenStation
   cameraPoint: {fileID: 549731808}
   isCookingStation: 0
+  buttonText: 
 --- !u!65 &1271295093
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7791,6 +7795,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KitchenStation
   cameraPoint: {fileID: 1096238373}
   isCookingStation: 1
+  buttonText: Cook
 --- !u!65 &1843843285
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9011,6 +9016,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KitchenStation
   cameraPoint: {fileID: 2121192398}
   isCookingStation: 0
+  buttonText: 
 --- !u!65 &2059005740
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9056,6 +9062,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KitchenStation
   cameraPoint: {fileID: 836764922}
   isCookingStation: 0
+  buttonText: 
 --- !u!1 &2092939855
 GameObject:
   m_ObjectHideFlags: 0
@@ -9108,6 +9115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KitchenStation
   cameraPoint: {fileID: 1537408030}
   isCookingStation: 0
+  buttonText: 
 --- !u!65 &2092939858
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10826,6 +10834,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KitchenStation
   cameraPoint: {fileID: 1256685561}
   isCookingStation: 1
+  buttonText: Cook
 --- !u!65 &2838307394040299665
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12588,6 +12597,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KitchenStation
   cameraPoint: {fileID: 576684048}
   isCookingStation: 0
+  buttonText: 
 --- !u!65 &9071987980774725326
 BoxCollider:
   m_ObjectHideFlags: 0
