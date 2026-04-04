@@ -9,7 +9,8 @@ public class PlayerInteraction : MonoBehaviour
 
     public Camera mainCamera;
     public GameObject recipePanel;
-    public List<GameObject> ingredients;
+    public List<GameObject> ingredients; //list of ingredient prefabs 
+    public Button mixButton;
 
     //Called when the player clicks the mouse, will move the camera to the position of the station clicked on
     public void Click(InputAction.CallbackContext context)
@@ -22,11 +23,19 @@ public class PlayerInteraction : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             KitchenStation station = hit.collider.GetComponent<KitchenStation>();
-            Ingredient ingredient = hit.collider.GetComponentInParent<Ingredient>();
+            Ingredient ingredient = hit.collider.GetComponent<Ingredient>();
 
             if (station != null)
             {
                 station.Interact();
+                if(station.isCookingStation)
+                {
+                    mixButton.gameObject.SetActive(true);
+                }
+                else
+                {
+                    mixButton.gameObject.SetActive(false);
+                }
             }
 
             //used to add ingredient to list (inventory) and destroy the ingredient in the scene
@@ -42,6 +51,7 @@ public class PlayerInteraction : MonoBehaviour
     public void BackToMain()
     {
         CameraController.Instance.BackToBeg();
+        mixButton.gameObject.SetActive(false);
     }
 
     public void OpenRecipePanel()
@@ -53,4 +63,10 @@ public class PlayerInteraction : MonoBehaviour
     {
         recipePanel.SetActive(false);
     }   
+
+    public void MixIngredients()
+    {
+        //do something
+        Debug.Log("Mixing Ingredients");
+    }
 }
