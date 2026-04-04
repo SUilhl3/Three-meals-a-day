@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -7,6 +9,7 @@ public class PlayerInteraction : MonoBehaviour
 
     public Camera mainCamera;
     public GameObject recipePanel;
+    public List<GameObject> ingredients;
 
     //Called when the player clicks the mouse, will move the camera to the position of the station clicked on
     public void Click(InputAction.CallbackContext context)
@@ -19,10 +22,18 @@ public class PlayerInteraction : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             KitchenStation station = hit.collider.GetComponent<KitchenStation>();
+            Ingredient ingredient = hit.collider.GetComponentInParent<Ingredient>();
 
             if (station != null)
             {
                 station.Interact();
+            }
+
+            //used to add ingredient to list (inventory) and destroy the ingredient in the scene
+            if (ingredient != null && context.performed)
+            {
+                ingredients.Add(ingredient.prefab);
+                Destroy(ingredient.gameObject);
             }
         }
     }
