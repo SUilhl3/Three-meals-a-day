@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 320003674232488524}
   - component: {fileID: 2563699293355669126}
   - component: {fileID: 4871292149956620301}
-  - component: {fileID: 2895807505348730858}
   m_Layer: 0
   m_Name: Food_Egg
   m_TagString: Untagged
@@ -114,16 +113,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 7109708741784996638, guid: 3aa7d5fa50409204e90b00203f8c9855, type: 3}
---- !u!114 &2895807505348730858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4077141521328887635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1883c1caacb28d4ca10c7aa2ff79bfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Ingredient
-  prefab: {fileID: 4077141521328887635}

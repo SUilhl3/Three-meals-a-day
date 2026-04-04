@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8356055514059741546}
   - component: {fileID: 6058005046915329440}
   - component: {fileID: 2252761125374768602}
-  - component: {fileID: 3128897387360511958}
   m_Layer: 0
   m_Name: Food_Milk Bottle
   m_TagString: Untagged
@@ -114,16 +113,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -4417284452157709687, guid: 95cc2a6335cea8246b76bb24b6c4476e, type: 3}
---- !u!114 &3128897387360511958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5697800158797286517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1883c1caacb28d4ca10c7aa2ff79bfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Ingredient
-  prefab: {fileID: 5697800158797286517}
