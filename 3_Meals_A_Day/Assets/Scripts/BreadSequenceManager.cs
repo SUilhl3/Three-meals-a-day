@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 using TMPro;
 using System.Reflection;
 
@@ -12,8 +13,11 @@ public class BreadSequenceManager : MonoBehaviour
     [SerializeField] private Dictionary<int, bool> breadSequenceFlags = new Dictionary<int, bool>();
     public int currentStep = 0;
 
-
     public TextMeshProUGUI recipeInstructionText;
+
+    [Header("Sequence Objects")]
+    [Header("Step 0 Objects")]
+    public GameObject milkObject;
 
     private void Awake()
     {
@@ -31,17 +35,7 @@ public class BreadSequenceManager : MonoBehaviour
 
     private void Update()
     {
-        if(breadSequenceFlags[currentStep] == true && currentStep < breadRecipe.stepsList.Length-1)
-        {
-            currentStep++;
-            updateRecipeText();
-            playCurrentSequence();
-            // Debug.Log($"Moved to next step: {currentStep}");
-        }
-        else if(currentStep == breadRecipe.stepsList.Length-1 && breadSequenceFlags[currentStep] == true)
-        {
-            // Debug.Log("Recipe completed!");
-        }
+        
     }
 
     private void InitializeFlags()
@@ -59,7 +53,17 @@ public class BreadSequenceManager : MonoBehaviour
     public void pressedButton()
     {
         setFlag(currentStep, true);
-        // Debug.Log($"Button pressed for step {currentStep}, flag set to true");
+        if(breadSequenceFlags[currentStep] == true && currentStep < breadRecipe.stepsList.Length-1)
+        {
+            currentStep++;
+            updateRecipeText();
+            playCurrentSequence();
+            // Debug.Log($"Moved to next step: {currentStep}");
+        }
+        else if(currentStep == breadRecipe.stepsList.Length-1 && breadSequenceFlags[currentStep] == true)
+        {
+            // Debug.Log("Recipe completed!");
+        }
     }
 
     public void playCurrentSequence()
@@ -79,7 +83,10 @@ public class BreadSequenceManager : MonoBehaviour
     //sequence functions for each step, this is to keep the logic behind each step separate and organized
     private void playSequence0()
     {
+        //Add milk
         Debug.Log("Playing sequence for step 0: " + breadRecipe.stepsList[0].stepName);
+        milkObject.SetActive(true);
+        StartCoroutine(waitForNextStep(5f));
     }
     private void playSequence1()
     {
@@ -91,4 +98,30 @@ public class BreadSequenceManager : MonoBehaviour
 
     private void setFlag(int stepIndex, bool value) => breadSequenceFlags[stepIndex] = value; 
     private void updateRecipeText() => recipeInstructionText.text = breadRecipe.stepsList[currentStep].instructions;
+
+    private IEnumerator waitForNextStep(float delay)
+    {
+        Debug.Log($"Waiting for {delay} seconds before moving to the next step...");
+        yield return new WaitForSeconds(delay);
+
+        if(breadSequenceFlags[currentStep] == true && currentStep < breadRecipe.stepsList.Length-1)
+        {
+            currentStep++;
+            updateRecipeText();
+            playCurrentSequence();
+            // Debug.Log($"Moved to next step: {currentStep}");
+        }
+        else if(currentStep == breadRecipe.stepsList.Length-1 && breadSequenceFlags[currentStep] == true)
+        {
+            // Debug.Log("Recipe completed!");
+        }
+        milkObject.SetActive(false);
+        yield return null;
+    }
+
+    private IEnumerator waitForStep(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        yield return null;
+    }
 }

@@ -1,0 +1,57 @@
+using System.Collections;
+using UnityEngine;
+using System;
+
+public class PourDetector : MonoBehaviour
+{
+    public int pourThreshold = 45;
+    public Transform origin = null;
+    public GameObject streamPrefab = null;
+
+    private bool isPouring = false;
+    private Stream currentStream = null;
+
+    private void Update()
+    {
+        bool pourCheck = CalculatePourAngle() < pourThreshold;
+
+        if(isPouring != pourCheck)
+        {
+            isPouring = pourCheck;
+
+            if(isPouring)
+            {
+                StartPour();
+            }
+            else
+            {
+                EndPour();
+            }
+        }
+    }
+
+    private void StartPour()
+    {
+        print("Started Pouring");
+        currentStream = CreateStream();
+        currentStream.Begin();
+    }
+
+    private void EndPour()
+    {
+        print("Stopped Pouring");
+        currentStream.End();
+        currentStream = null;
+    }
+
+    private float CalculatePourAngle()
+    {
+        return transform.up.y * Mathf.Rad2Deg;
+    }
+
+    private Stream CreateStream()
+    {
+        GameObject streamObject = Instantiate(streamPrefab, origin.position, Quaternion.identity, transform);
+        return streamObject.GetComponent<Stream>();
+    }
+}
