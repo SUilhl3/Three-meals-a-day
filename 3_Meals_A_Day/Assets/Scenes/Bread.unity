@@ -4279,7 +4279,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &896441804
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6777,7 +6777,7 @@ MonoBehaviour:
   currentStep: 0
   recipeInstructionText: {fileID: 841022568}
   milkObject: {fileID: 1999890418}
-  mixVolumeObject: {fileID: 0}
+  mixVolumeObject: {fileID: 896441803}
 --- !u!4 &1393359475
 Transform:
   m_ObjectHideFlags: 0

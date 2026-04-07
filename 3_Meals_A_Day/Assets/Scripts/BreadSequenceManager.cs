@@ -79,6 +79,8 @@ public class BreadSequenceManager : MonoBehaviour
         //Add milk
         Debug.Log("Playing sequence for step 0: " + breadRecipe.stepsList[0].stepName);
         milkObject.SetActive(true);
+        mixVolumeObject.SetActive(true);
+        mixVolumeObject.GetComponent<Animator>().SetBool("mixMilk", true);
 
         yield return new WaitForSeconds(5f);
         
