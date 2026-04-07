@@ -18,6 +18,7 @@ public class BreadSequenceManager : MonoBehaviour
     [Header("Sequence Objects")]
     [Header("Step 0 Objects")]
     public GameObject milkObject;
+    public GameObject mixVolumeObject;
 
     private void Awake()
     {
@@ -44,7 +45,7 @@ public class BreadSequenceManager : MonoBehaviour
         {
             breadSequenceFlags[i] = false; //set all flags to false initially
             updateRecipeText(); // Set the initial recipe instruction text
-            playCurrentSequence(); 
+            // playCurrentSequence(); 
             // Debug.Log($"Initialized flag for step {i} to false");
         }
     }
@@ -52,18 +53,9 @@ public class BreadSequenceManager : MonoBehaviour
     //function for setting the current flag to true, continuing to the next step
     public void pressedButton()
     {
+        playCurrentSequence();
         setFlag(currentStep, true);
-        if(breadSequenceFlags[currentStep] == true && currentStep < breadRecipe.stepsList.Length-1)
-        {
-            currentStep++;
-            updateRecipeText();
-            playCurrentSequence();
-            // Debug.Log($"Moved to next step: {currentStep}");
-        }
-        else if(currentStep == breadRecipe.stepsList.Length-1 && breadSequenceFlags[currentStep] == true)
-        {
-            // Debug.Log("Recipe completed!");
-        }
+        check();
     }
 
     public void playCurrentSequence()
@@ -71,7 +63,8 @@ public class BreadSequenceManager : MonoBehaviour
         MethodInfo method = GetType().GetMethod($"playSequence{currentStep}", BindingFlags.NonPublic | BindingFlags.Instance);
         if (method != null)
         {
-            method.Invoke(this, null);
+            IEnumerator coroutine = (IEnumerator)method.Invoke(this, null);
+            StartCoroutine(coroutine);
         }
         else
         {
@@ -81,16 +74,22 @@ public class BreadSequenceManager : MonoBehaviour
 
 
     //sequence functions for each step, this is to keep the logic behind each step separate and organized
-    private void playSequence0()
+    private IEnumerator playSequence0()
     {
         //Add milk
         Debug.Log("Playing sequence for step 0: " + breadRecipe.stepsList[0].stepName);
         milkObject.SetActive(true);
-        StartCoroutine(waitForNextStep(5f));
+
+        yield return new WaitForSeconds(5f);
+        
+        milkObject.SetActive(false);
+
+        yield return null;
     }
-    private void playSequence1()
+    private IEnumerator playSequence1()
     {
         Debug.Log("Playing sequence for step 1: " + breadRecipe.stepsList[1].stepName);
+        yield return null;
     }
 
 
@@ -99,11 +98,8 @@ public class BreadSequenceManager : MonoBehaviour
     private void setFlag(int stepIndex, bool value) => breadSequenceFlags[stepIndex] = value; 
     private void updateRecipeText() => recipeInstructionText.text = breadRecipe.stepsList[currentStep].instructions;
 
-    private IEnumerator waitForNextStep(float delay)
+    private void check()
     {
-        Debug.Log($"Waiting for {delay} seconds before moving to the next step...");
-        yield return new WaitForSeconds(delay);
-
         if(breadSequenceFlags[currentStep] == true && currentStep < breadRecipe.stepsList.Length-1)
         {
             currentStep++;
@@ -115,13 +111,5 @@ public class BreadSequenceManager : MonoBehaviour
         {
             // Debug.Log("Recipe completed!");
         }
-        milkObject.SetActive(false);
-        yield return null;
-    }
-
-    private IEnumerator waitForStep(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        yield return null;
     }
 }
