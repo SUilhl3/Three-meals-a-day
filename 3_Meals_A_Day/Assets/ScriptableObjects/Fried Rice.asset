@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5d0d48200c4094894f6c9ffc07a6dc, type: 3}
+  m_Name: Fried Rice
+  m_EditorClassIdentifier: Assembly-CSharp::Recipe
+  recipeName: Fried Rice
+  steps: 11
+  stepsList:
+  - stepName: Cut Garlic
+    instructions: 'Use the knife to mince the garlic '
+    ingredient: Garlic
+    utensil: Knife
+    ingredientNeeded: {fileID: 0}
+  - stepName: Add Cut Garlic to Pan
+    instructions: Transfer the cut garlic to a pan on the stove
+    ingredient: Cut Garlic
+    utensil: Pan
+    ingredientNeeded: {fileID: 0}
+  - stepName: Add Olive Oil
+    instructions: Add some olive oil to the pan with the garlic
+    ingredient: Olive Oil
+    utensil: Pan
+    ingredientNeeded: {fileID: 0}
+  - stepName: Cook Until The Garlic Turns Brown
+    instructions: Cook over low heat until the garlic turns brown
+    ingredient: 
+    utensil: Pan
+    ingredientNeeded: {fileID: 0}
+  - stepName: Add Soy Sauce
+    instructions: Add some soy sauce to the garlic
+    ingredient: Soy Sauce
+    utensil: Pan
+    ingredientNeeded: {fileID: 0}
+  - stepName: Add Salt
+    instructions: Add some salt  to the garlic
+    ingredient: Salt
+    utensil: Pan
+    ingredientNeeded: {fileID: 0}
+  - stepName: Add Rice
+    instructions: Add the rice to the garlic in the pan and increase heat to medium
+    ingredient: Rice
+    utensil: Pan
+    ingredientNeeded: {fileID: 0}
+  - stepName: Add Butter
+    instructions: 'Add some butter to the pan to prevent it from burning '
+    ingredient: Butter
+    utensil: Pan
+    ingredientNeeded: {fileID: 0}
+  - stepName: Remove From Pan and Place On Plate
+    instructions: Remove the rice from the pan and place it on a plate
+    ingredient: Finished RIce
+    utensil: Plate
+    ingredientNeeded: {fileID: 0}
+  - stepName: Add Egg To Pan
+    instructions: Add an egg to the pan and cook until complete
+    ingredient: Egg
+    utensil: Plate
+    ingredientNeeded: {fileID: 0}
+  - stepName: Place Egg On Top Of Rice
+    instructions: 'Place the egg on top of the rice '
+    ingredient: Egg
+    utensil: Plate
+    ingredientNeeded: {fileID: 0}
