@@ -8,4 +8,5 @@ public class Step
     public string ingredient;
     public string utensil;
     public GameObject ingredientNeeded;
+    public string station;
 }

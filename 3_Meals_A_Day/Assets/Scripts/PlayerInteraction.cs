@@ -15,6 +15,7 @@ public class PlayerInteraction : MonoBehaviour
     public Button mixButton;
     public Recipe recipe;
     int currentRecipeStep = 0;
+    public string currentStation;
 
     //Called when the player clicks the mouse, will move the camera to the position of the station clicked on
     public void Click(InputAction.CallbackContext context)
@@ -32,6 +33,7 @@ public class PlayerInteraction : MonoBehaviour
             if (station != null)
             {
                 station.Interact();
+                currentStation = station.stationName;
                 if(station.isCookingStation)
                 {
                     mixButton.gameObject.SetActive(true);
