@@ -25,6 +25,12 @@ public class BreadSequenceManager : MonoBehaviour
     [Header("Step 1 Objects")]
     public GameObject yeastObject;
 
+    [Header("Step 2 Objects")]
+    public GameObject sugarObject;
+
+    [Header("Step 3 Objects")]
+    public GameObject whiskObject;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -62,26 +68,29 @@ public class BreadSequenceManager : MonoBehaviour
     //function for setting the current flag to true, continuing to the next step
     public void pressedButton()
     {
-        playCurrentSequence();
-        setFlag(currentStep, true);
+        bool playSeq = playCurrentSequence();
+        if(!playSeq){}
+        else { setFlag(currentStep, true); }
         check();
     }
 
-    public void playCurrentSequence()
+    public bool playCurrentSequence()
     {
         MethodInfo method = GetType().GetMethod($"playSequence{currentStep}", BindingFlags.NonPublic | BindingFlags.Instance);
         if (method != null)
         {
             IEnumerator coroutine = (IEnumerator)method.Invoke(this, null);
             StartCoroutine(coroutine);
+            return true;
         }
         else
         {
             Debug.LogWarning($"No method found for playSequence{currentStep}");
+            return false;
         }
     }
 
-
+    
     //sequence functions for each step, this is to keep the logic behind each step separate and organized
     private IEnumerator playSequence0()
     {
@@ -100,6 +109,7 @@ public class BreadSequenceManager : MonoBehaviour
 
     private IEnumerator playSequence1()
     {
+        //Add yeast
         Debug.Log("Playing sequence for step 1: " + breadRecipe.stepsList[1].stepName);
         yeastObject.SetActive(true);
         yield return new WaitForSeconds(1f);
@@ -112,7 +122,38 @@ public class BreadSequenceManager : MonoBehaviour
         yield return null;
     }
 
+    private IEnumerator playSequence2()
+    {
+        //Add sugar
+        Debug.Log("Playing sequence for step 2: " + breadRecipe.stepsList[2].stepName);
+        sugarObject.SetActive(true);
+        yield return new WaitForSeconds(1f);
 
+        mixVolumeObject.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
+        yield return new WaitForSeconds(2f);
+
+        sugarObject.SetActive(false);
+        
+        yield return null;
+    }
+
+    private IEnumerator playSequence3()
+    {
+        //Mix ingredients
+        Debug.Log("Playing sequence for step 3: " + breadRecipe.stepsList[3].stepName);
+        whiskObject.GetComponent<Animator>().SetBool("whisk", true);
+        yield return new WaitForSeconds(4f);
+        whiskObject.GetComponent<Animator>().SetBool("whisk", false);
+        whiskObject.GetComponent<Animator>().SetBool("reset", true);
+        yield return null;
+    }
+
+    private IEnumerator playSequence4()
+    {
+        Debug.Log("Playing sequence for step 4: " + breadRecipe.stepsList[4].stepName);
+        
+        yield return null;
+    }
 
 
     private void setFlag(int stepIndex, bool value) => breadSequenceFlags[stepIndex] = value; 
