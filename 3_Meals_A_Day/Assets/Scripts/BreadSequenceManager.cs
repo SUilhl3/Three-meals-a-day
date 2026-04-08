@@ -31,6 +31,17 @@ public class BreadSequenceManager : MonoBehaviour
     [Header("Step 3 Objects")]
     public GameObject whiskObject;
 
+    [Header("Step 4 Objects")]
+    public GameObject eggObject;
+
+    [Header("Step 7 Objects")]
+    public GameObject saltObject;
+    [Header("Step 8 Objects")]
+    public GameObject flourObject;
+    [Header("Step 9 Objects")]
+    public GameObject doughObject;
+    public float doughTargetScale = .7f;
+    public float doughScale = .1f;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -142,18 +153,117 @@ public class BreadSequenceManager : MonoBehaviour
         //Mix ingredients
         Debug.Log("Playing sequence for step 3: " + breadRecipe.stepsList[3].stepName);
         whiskObject.GetComponent<Animator>().SetBool("whisk", true);
-        yield return new WaitForSeconds(4f);
-        whiskObject.GetComponent<Animator>().SetBool("whisk", false);
+
         whiskObject.GetComponent<Animator>().SetBool("reset", true);
+
+        yield return new WaitForSeconds(8f);
+        
+        whiskObject.GetComponent<Animator>().SetBool("whisk", false);
+        whiskObject.GetComponent<Animator>().SetBool("reset", false);
         yield return null;
     }
 
     private IEnumerator playSequence4()
     {
         Debug.Log("Playing sequence for step 4: " + breadRecipe.stepsList[4].stepName);
-        
+        eggObject.SetActive(true);
+
+        yield return new WaitForSeconds(3f);
+
+        eggObject.SetActive(false);   
         yield return null;
     }
+
+    private IEnumerator playSequence5()
+    {
+        Debug.Log("Playing sequence for step 5: " + breadRecipe.stepsList[5].stepName);
+        whiskObject.GetComponent<Animator>().SetBool("whisk", true);
+
+        whiskObject.GetComponent<Animator>().SetBool("reset", true);
+
+        yield return new WaitForSeconds(8f);
+        
+        whiskObject.GetComponent<Animator>().SetBool("whisk", false);
+        whiskObject.GetComponent<Animator>().SetBool("reset", false);
+        yield return null;
+    }
+
+    private IEnumerator playSequence6()
+    {
+        Debug.Log("Playing sequence for step 6: " + breadRecipe.stepsList[6].stepName);
+        Debug.Log("Mixture is setting...");
+        yield return null;
+    }
+
+    private IEnumerator playSequence7()
+    {
+        Debug.Log("Playing sequence for step 7: " + breadRecipe.stepsList[7].stepName);
+        saltObject.SetActive(true);
+
+        yield return new WaitForSeconds(2f);
+        saltObject.SetActive(false);
+
+        yield return null;
+    }
+
+    private IEnumerator playSequence8()
+    {
+        Debug.Log("Playing sequence for step 8: " + breadRecipe.stepsList[8].stepName);
+        flourObject.SetActive(true);
+
+        yield return new WaitForSeconds(2f);
+        flourObject.SetActive(false);
+
+        yield return null;
+    }
+
+    private IEnumerator playSequence9()
+{
+    Debug.Log("Playing sequence for step 9: " + breadRecipe.stepsList[9].stepName);
+
+    Animator whiskAnimator = whiskObject.GetComponent<Animator>();
+    whiskAnimator.SetBool("whisk", true);
+    whiskAnimator.SetBool("reset", true);
+
+    float duration = 6f;
+    float elapsed = 0f;
+
+    // Dough scale setup
+    Vector3 startScale = new Vector3(0.01f, 0.01f, 0.01f);
+    Vector3 targetScale = new Vector3(0.7f, 0.7f, 0.7f);
+    doughObject.SetActive(true);
+    doughObject.transform.localScale = startScale;
+
+    // Get the material from the mix volume
+    Material mixMat = mixVolumeObject.GetComponent<Renderer>().material;
+
+    float startFill = mixMat.GetFloat("_Fill");
+    float targetFill = .524f;
+
+    yield return new WaitForSeconds(1.5f); 
+
+    while (elapsed < duration)
+    {
+        float t = elapsed / duration;
+
+        // Grow dough
+        doughObject.transform.localScale = Vector3.Lerp(startScale, targetScale, t);
+
+        // Reduce mix volume
+        float fill = Mathf.Lerp(startFill, targetFill, t);
+        mixMat.SetFloat("_Fill", fill);
+
+        elapsed += Time.deltaTime;
+        yield return null;
+    }
+
+    // // Ensure final values are exact
+    doughObject.transform.localScale = targetScale;
+    mixMat.SetFloat("_Fill", targetFill);
+
+    whiskAnimator.SetBool("whisk", false);
+    whiskAnimator.SetBool("reset", false);
+}
 
 
     private void setFlag(int stepIndex, bool value) => breadSequenceFlags[stepIndex] = value; 
