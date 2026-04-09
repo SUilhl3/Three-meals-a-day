@@ -31,53 +31,53 @@ MonoBehaviour:
     instructions: Add some olive oil to the pan with the garlic
     ingredient: Olive Oil
     utensil: Pan
-    ingredientNeeded: {fileID: 0}
-    station: 
+    ingredientNeeded: {fileID: 1663158576358738, guid: cbd05acb56e7f6246ad7184ffb112eb9, type: 3}
+    station: Stove
   - stepName: Cook Until The Garlic Turns Brown
     instructions: Cook over low heat until the garlic turns brown
     ingredient: 
     utensil: Pan
     ingredientNeeded: {fileID: 0}
-    station: 
+    station: Stove
   - stepName: Add Soy Sauce
     instructions: Add some soy sauce to the garlic
     ingredient: Soy Sauce
     utensil: Pan
-    ingredientNeeded: {fileID: 0}
-    station: 
+    ingredientNeeded: {fileID: 4380131317385348385, guid: fe6446ce7a164b946b7ce99a283851dd, type: 3}
+    station: Stove
   - stepName: Add Salt
     instructions: Add some salt  to the garlic
     ingredient: Salt
     utensil: Pan
-    ingredientNeeded: {fileID: 0}
-    station: 
+    ingredientNeeded: {fileID: 4857173826518496482, guid: ef1d6c3713c584e4699449d682df081a, type: 3}
+    station: Stove
   - stepName: Add Rice
     instructions: Add the rice to the garlic in the pan and increase heat to medium
     ingredient: Rice
     utensil: Pan
-    ingredientNeeded: {fileID: 0}
-    station: 
+    ingredientNeeded: {fileID: 7497228276271424348, guid: 30b514f0793b09641a844b6a4210870c, type: 3}
+    station: Stove
   - stepName: Add Butter
     instructions: 'Add some butter to the pan to prevent it from burning '
     ingredient: Butter
     utensil: Pan
-    ingredientNeeded: {fileID: 0}
-    station: 
+    ingredientNeeded: {fileID: 4566532155570362071, guid: 83d7826ea0b312243a3dcd9007cb467f, type: 3}
+    station: Stove
   - stepName: Remove From Pan and Place On Plate
     instructions: Remove the rice from the pan and place it on a plate
     ingredient: Finished RIce
     utensil: Plate
     ingredientNeeded: {fileID: 0}
-    station: 
+    station: Plating
   - stepName: Add Egg To Pan
     instructions: Add an egg to the pan and cook until complete
     ingredient: Egg
     utensil: Plate
     ingredientNeeded: {fileID: 0}
-    station: 
+    station: Stove
   - stepName: Place Egg On Top Of Rice
     instructions: 'Place the egg on top of the rice '
     ingredient: Egg
     utensil: Plate
     ingredientNeeded: {fileID: 0}
-    station: 
+    station: Plating

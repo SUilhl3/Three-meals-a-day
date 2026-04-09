@@ -23,6 +23,14 @@ public class FriedRiceSequenceManager : MonoBehaviour
     [Header("Step 1 Objects")]
     public GameObject cutGarlic;
 
+    [Header("Step 2 Objects")]
+    public GameObject oliveOilBottle;
+    public GameObject oliveOilLiquid;
+
+    [Header("Step 4 Objects")]
+    public GameObject soySauceBottle;
+    public Color nextOilColor;
+
 
     private void Awake()
     {
@@ -133,8 +141,48 @@ public class FriedRiceSequenceManager : MonoBehaviour
 
     private IEnumerator playSequence1()
     {
-        Debug.Log("Playing sequence for step 0: " + friedRiceRecipe.stepsList[0].stepName);
+        Debug.Log("Playing sequence for step 1: " + friedRiceRecipe.stepsList[1].stepName);
         cutGarlic.SetActive(true);
+        yield return null;
+    }
+
+    private IEnumerator playSequence2()
+    {
+        Debug.Log("Playing sequence for step 2: " + friedRiceRecipe.stepsList[2].stepName);
+
+        oliveOilBottle.SetActive(true);
+        Animator anim = oliveOilBottle.GetComponent<Animator>();
+        anim.SetTrigger("Pouring");
+
+        yield  return new WaitForSeconds(1f);
+
+        oliveOilLiquid.SetActive(true);
+
+
+        yield return null;
+    }
+
+    private IEnumerator playSequence3()
+    {
+        Debug.Log("Playing sequence for step 3: " + friedRiceRecipe.stepsList[3].stepName);
+
+        //some animation for cooking garlic 
+
+        yield return new WaitForSeconds(2f);
+
+        yield return null;
+    }
+
+    private IEnumerator playSequence4()
+    {
+        Debug.Log("Playing sequence for step 4: " + friedRiceRecipe.stepsList[4].stepName);
+        
+
+        soySauceBottle.gameObject.SetActive(true);
+        Animator anim = soySauceBottle.GetComponent<Animator>();
+        anim.SetTrigger("Pouring");
+
+        oliveOilLiquid.GetComponent<Renderer>().material.SetColor("_Color", nextOilColor);
         yield return null;
     }
 
