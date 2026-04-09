@@ -2988,6 +2988,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 636770978}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &646167205
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 646167206}
+  m_Layer: 0
+  m_Name: Sequence Objects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &646167206
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646167205}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.93684, y: 0.9125, z: 1.97157}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1279539530}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &721868439 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3215568804802108784, guid: 54bd1ea9f3c63bd478c9cecca675b556, type: 3}
@@ -5796,6 +5828,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1273944952}
   m_Mesh: {fileID: 7089314950479692954, guid: 6ba3a80fd3874434191372ffda87f21d, type: 3}
+--- !u!1 &1279539529
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1279539530}
+  m_Layer: 0
+  m_Name: Seq 0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1279539530
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279539529}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1788369591}
+  m_Father: {fileID: 646167206}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1346415131
 GameObject:
   m_ObjectHideFlags: 0
@@ -8681,7 +8745,9 @@ MonoBehaviour:
   friedRiceRecipe: {fileID: 11400000, guid: 11cb3ae77aec0674e8e994a1c4fdddb5, type: 2}
   currentStep: 0
   recipeInstructionText: {fileID: 186870430}
-  milkObject: {fileID: 800694683110752358, guid: 6fd1b1f31d471954994a4726f2f39b5f, type: 3}
+  knifeObject: {fileID: 2009644508}
+  garlicObject: {fileID: 0}
+  cutGarlicObject: {fileID: 0}
 --- !u!1 &1786446115
 GameObject:
   m_ObjectHideFlags: 0
@@ -8832,6 +8898,68 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!1001 &1788369590
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1279539530}
+    m_Modifications:
+    - target: {fileID: 798850373033733084, guid: 6fd1b1f31d471954994a4726f2f39b5f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.8161597
+      objectReference: {fileID: 0}
+    - target: {fileID: 798850373033733084, guid: 6fd1b1f31d471954994a4726f2f39b5f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.061499953
+      objectReference: {fileID: 0}
+    - target: {fileID: 798850373033733084, guid: 6fd1b1f31d471954994a4726f2f39b5f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.5894301
+      objectReference: {fileID: 0}
+    - target: {fileID: 798850373033733084, guid: 6fd1b1f31d471954994a4726f2f39b5f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 798850373033733084, guid: 6fd1b1f31d471954994a4726f2f39b5f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 798850373033733084, guid: 6fd1b1f31d471954994a4726f2f39b5f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 798850373033733084, guid: 6fd1b1f31d471954994a4726f2f39b5f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 798850373033733084, guid: 6fd1b1f31d471954994a4726f2f39b5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 798850373033733084, guid: 6fd1b1f31d471954994a4726f2f39b5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 798850373033733084, guid: 6fd1b1f31d471954994a4726f2f39b5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 800694683110752358, guid: 6fd1b1f31d471954994a4726f2f39b5f, type: 3}
+      propertyPath: m_Name
+      value: Garlic Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6fd1b1f31d471954994a4726f2f39b5f, type: 3}
+--- !u!4 &1788369591 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 798850373033733084, guid: 6fd1b1f31d471954994a4726f2f39b5f, type: 3}
+  m_PrefabInstance: {fileID: 1788369590}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1793173627
 GameObject:
   m_ObjectHideFlags: 0
@@ -10090,11 +10218,62 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cutting Station
       objectReference: {fileID: 0}
+    - target: {fileID: 4479798747037507409, guid: ba049fa7a59dfe146baa53a33afc0712, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4479798747037507409, guid: ba049fa7a59dfe146baa53a33afc0712, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2009644509}
+    - targetCorrespondingSourceObject: {fileID: 4479798747037507409, guid: ba049fa7a59dfe146baa53a33afc0712, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2009644514}
   m_SourcePrefab: {fileID: 100100000, guid: ba049fa7a59dfe146baa53a33afc0712, type: 3}
+--- !u!1 &2009644508 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4479798747037507409, guid: ba049fa7a59dfe146baa53a33afc0712, type: 3}
+  m_PrefabInstance: {fileID: 1989900748}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2009644509
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009644508}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6b904168ea7f214439029b574f4821e3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2009644514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009644508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93c29ba5f33a1a74a9e5020912d3722d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Knife
+  garlicObject: {fileID: 0}
+  cutGarlicObject: {fileID: 0}
 --- !u!1 &2052519754
 GameObject:
   m_ObjectHideFlags: 0
@@ -10702,3 +10881,4 @@ SceneRoots:
   - {fileID: 1702664902}
   - {fileID: 1527884657}
   - {fileID: 1784168019}
+  - {fileID: 646167206}

@@ -16,11 +16,12 @@ public class FriedRiceSequenceManager : MonoBehaviour
     public TextMeshProUGUI recipeInstructionText;
 
     [Header("Sequence Objects")]
-    //public GameObject mixVolumeObject;
+    public GameObject knifeObject;
     //public Animator mixVolumeAnimator;
 
     [Header("Step 0 Objects")]
-    public GameObject milkObject;
+    public GameObject garlicObject;
+    public GameObject cutGarlicObject;
 
 
     private void Awake()
@@ -114,13 +115,10 @@ public class FriedRiceSequenceManager : MonoBehaviour
         //Some animation below (TODO)
 
         Debug.Log("Playing sequence for step 0: " + friedRiceRecipe.stepsList[0].stepName);
-        //milkObject.SetActive(true);
-        //mixVolumeObject.SetActive(true);
-        //mixVolumeAnimator.SetBool("mixMilk", true);
-        //// mixVolumeObject.GetComponent<Renderer>().material.SetColor("_Color", Color.blue);
-        //yield return new WaitForSeconds(5f);
 
-        //milkObject.SetActive(false);
+        Animator anim = knifeObject.GetComponent<Animator>();
+        anim.SetTrigger("Cut");
+
 
         yield return null;
     }
