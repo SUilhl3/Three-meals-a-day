@@ -14,14 +14,14 @@ public class FriedRiceSequenceManager : MonoBehaviour
     public int currentStep = 0;
 
     public TextMeshProUGUI recipeInstructionText;
+    public TextMeshProUGUI feedbackText;
 
     [Header("Sequence Objects")]
     public GameObject knifeObject;
     //public Animator mixVolumeAnimator;
 
-    [Header("Step 0 Objects")]
-    public GameObject garlicObject;
-    public GameObject cutGarlicObject;
+    [Header("Step 1 Objects")]
+    public GameObject cutGarlic;
 
 
     private void Awake()
@@ -87,24 +87,31 @@ public class FriedRiceSequenceManager : MonoBehaviour
 
         if (player.currentStation == friedRiceRecipe.stepsList[currentStep].station)
         {
-            Debug.Log("In correct station");
 
             if (friedRiceRecipe.stepsList[currentStep].ingredientNeeded == null || player.ingredients.Contains(friedRiceRecipe.stepsList[currentStep].ingredientNeeded))
             {
-                Debug.Log("Has needed ingredient");
+                StartCoroutine(ShowMessageCoroutine("Correct! Move to the next step."));
                 return true;
             }
             else
             {
-                Debug.Log("Does not have needed ingredient");
+                StartCoroutine(ShowMessageCoroutine("Missing Ingredient"));
                 return false;
             }
         }
         else
         {
-            Debug.Log("Not in correct station");
+            StartCoroutine(ShowMessageCoroutine("Not In The Correct Station"));
             return false;
         }
+    }
+
+    private IEnumerator ShowMessageCoroutine(string message)
+    {
+        feedbackText.text = message;
+        feedbackText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        feedbackText.gameObject.SetActive(false);
     }
 
 
@@ -123,6 +130,13 @@ public class FriedRiceSequenceManager : MonoBehaviour
         yield return null;
     }
 
+
+    private IEnumerator playSequence1()
+    {
+        Debug.Log("Playing sequence for step 0: " + friedRiceRecipe.stepsList[0].stepName);
+        cutGarlic.SetActive(true);
+        yield return null;
+    }
 
 
     private void setFlag(int stepIndex, bool value) => riceSequenceFlags[stepIndex] = value;
