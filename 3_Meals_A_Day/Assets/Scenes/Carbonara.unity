@@ -453,6 +453,7 @@ MonoBehaviour:
   cameraPoint: {fileID: 483363767}
   isCookingStation: 0
   buttonText: 
+  stationName: 
 --- !u!1 &83447459
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,6 +653,7 @@ MonoBehaviour:
   ingredients: []
   mixButton: {fileID: 0}
   recipe: {fileID: 0}
+  currentStation: 
 --- !u!114 &105404408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2071,6 +2073,7 @@ MonoBehaviour:
   cameraPoint: {fileID: 1959406894}
   isCookingStation: 0
   buttonText: 
+  stationName: 
 --- !u!1 &342038696
 GameObject:
   m_ObjectHideFlags: 0
@@ -4154,6 +4157,7 @@ MonoBehaviour:
   cameraPoint: {fileID: 1170550174}
   isCookingStation: 1
   buttonText: Mix
+  stationName: 
 --- !u!65 &865627275
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4457,6 +4461,7 @@ MonoBehaviour:
   cameraPoint: {fileID: 753767219}
   isCookingStation: 0
   buttonText: 
+  stationName: 
 --- !u!23 &904884899
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5747,6 +5752,7 @@ MonoBehaviour:
   cameraPoint: {fileID: 342038697}
   isCookingStation: 0
   buttonText: 
+  stationName: 
 --- !u!23 &1143911655
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10491,6 +10497,7 @@ MonoBehaviour:
   cameraPoint: {fileID: 130181337}
   isCookingStation: 0
   buttonText: 
+  stationName: 
 --- !u!23 &1959799952
 MeshRenderer:
   m_ObjectHideFlags: 0
