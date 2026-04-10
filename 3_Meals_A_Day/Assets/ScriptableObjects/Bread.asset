@@ -101,20 +101,8 @@ MonoBehaviour:
     utensil: 
     ingredientNeeded: {fileID: 0}
     station: 
-  - stepName: Squeeze gas out of dough
-    instructions: Squeeze the dough to remove any gas out of it
-    ingredient: 
-    utensil: Hands
-    ingredientNeeded: {fileID: 0}
-    station: 
   - stepName: Divide dough
     instructions: Divide the dough into 6 pieces
-    ingredient: 
-    utensil: Hands
-    ingredientNeeded: {fileID: 0}
-    station: 
-  - stepName: Roll the dough
-    instructions: 'Roll the dough into balls '
     ingredient: 
     utensil: Hands
     ingredientNeeded: {fileID: 0}
