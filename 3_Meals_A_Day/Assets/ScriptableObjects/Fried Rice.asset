@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fried Rice
   m_EditorClassIdentifier: Assembly-CSharp::Recipe
   recipeName: Fried Rice
-  steps: 11
+  steps: 9
   stepsList:
   - stepName: Cut Garlic
     instructions: 'Use the knife to mince the garlic '
@@ -68,16 +68,4 @@ MonoBehaviour:
     ingredient: Finished RIce
     utensil: Plate
     ingredientNeeded: {fileID: 0}
-    station: Plating
-  - stepName: Add Egg To Pan
-    instructions: Add an egg to the pan and cook until complete
-    ingredient: Egg
-    utensil: Plate
-    ingredientNeeded: {fileID: 0}
-    station: Stove
-  - stepName: Place Egg On Top Of Rice
-    instructions: 'Place the egg on top of the rice '
-    ingredient: Egg
-    utensil: Plate
-    ingredientNeeded: {fileID: 0}
-    station: Plating
+    station: Serving

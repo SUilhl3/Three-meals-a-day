@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections;
 using TMPro;
 using System.Reflection;
+using UnityEngine.UI;
 
 public class FriedRiceSequenceManager : MonoBehaviour
 {
@@ -13,8 +14,10 @@ public class FriedRiceSequenceManager : MonoBehaviour
     [SerializeField] private Dictionary<int, bool> riceSequenceFlags = new Dictionary<int, bool>();
     public int currentStep = 0;
 
+    [Header("UI Elements")]
     public TextMeshProUGUI recipeInstructionText;
     public TextMeshProUGUI feedbackText;
+    public Button nextStepButton;
 
     [Header("Sequence Objects")]
     public GameObject knifeObject;
@@ -30,6 +33,21 @@ public class FriedRiceSequenceManager : MonoBehaviour
     [Header("Step 4 Objects")]
     public GameObject soySauceBottle;
     public Color nextOilColor;
+
+    [Header("Step 5 Objects")]
+    public GameObject salt;
+
+    [Header("Step 6 Objects")]
+    public GameObject riceBowl;
+    public GameObject rice;
+
+    [Header("Step 7 Objects")]
+    public GameObject butter;
+
+    [Header("Step 8 Objects")]
+    public GameObject finishedRice; //child component under pan object so it will be destroyed when you pick up the pan
+    public GameObject platedRice;
+    public GameObject pan;
 
 
     private void Awake()
@@ -48,6 +66,17 @@ public class FriedRiceSequenceManager : MonoBehaviour
         //    mixVolumeAnimator = mixVolumeObject.GetComponent<Animator>();
         //}
         InitializeFlags();
+    }
+
+    private void Update()
+    {
+        if (currentStep == friedRiceRecipe.stepsList.Length - 1 && riceSequenceFlags[currentStep] == true)
+        {
+            Debug.Log("Recipe completed!");
+            nextStepButton.gameObject.SetActive(false);
+            feedbackText.gameObject.SetActive(true);
+            feedbackText.text = "Recipe Completed!";
+        }
     }
 
     private void InitializeFlags()
@@ -182,7 +211,50 @@ public class FriedRiceSequenceManager : MonoBehaviour
         Animator anim = soySauceBottle.GetComponent<Animator>();
         anim.SetTrigger("Pouring");
 
+        yield return new WaitForSeconds(1f);
+
         oliveOilLiquid.GetComponent<Renderer>().material.SetColor("_Color", nextOilColor);
+        yield return null;
+    }
+
+    private IEnumerator playSequence5()
+    {
+        Debug.Log("Playing sequence for step 5: " + friedRiceRecipe.stepsList[5].stepName);
+        salt.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        Destroy(salt);
+        yield return null;
+    }
+
+    private IEnumerator playSequence6()
+    {
+        Debug.Log("Playing sequence for step 6: " + friedRiceRecipe.stepsList[6].stepName);
+        //some animation for cooking rice with soy sauce and oil
+        riceBowl.SetActive(true);
+        Animator anim = riceBowl.GetComponent<Animator>();
+        anim.SetTrigger("Pouring");
+        yield return null;
+    }
+
+    private IEnumerator playSequence7()
+    {
+        Debug.Log("Playing sequence for step 7: " + friedRiceRecipe.stepsList[7].stepName);
+        //some animation for plating the fried rice
+        butter.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        Destroy(oliveOilLiquid);
+        Destroy(butter);
+        Destroy(rice);
+        Destroy(cutGarlic);
+        finishedRice.SetActive(true);
+        pan.GetComponent<Ingredient>().enabled = true; // so you can pick up the pan after the rice is done
+        yield return null;
+    }
+
+    private IEnumerator playSequence8()
+    {
+        Debug.Log("Playing sequence for step 8: " + friedRiceRecipe.stepsList[8].stepName);
+        platedRice.SetActive(true);
         yield return null;
     }
 

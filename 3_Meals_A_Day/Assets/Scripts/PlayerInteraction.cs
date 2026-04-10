@@ -46,7 +46,7 @@ public class PlayerInteraction : MonoBehaviour
             }
 
             //used to add ingredient to list (inventory) and destroy the ingredient in the scene
-            if (ingredient != null && context.performed)
+            if (ingredient != null && ingredient.enabled && context.performed)
             {
                 ingredients.Add(ingredient.prefab);
                 Destroy(ingredient.gameObject);
