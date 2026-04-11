@@ -285,6 +285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ingredient
   prefab: {fileID: 4077141521328887635, guid: 26dd2342357dc454bb29148a4339dd1d, type: 3}
+  spawnObject: {fileID: 0}
 --- !u!1001 &55733028
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -380,6 +381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ingredient
   prefab: {fileID: 4077141521328887635, guid: 26dd2342357dc454bb29148a4339dd1d, type: 3}
+  spawnObject: {fileID: 0}
 --- !u!1 &71761153
 GameObject:
   m_ObjectHideFlags: 0
@@ -8872,6 +8874,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ingredient
   prefab: {fileID: 4077141521328887635, guid: 26dd2342357dc454bb29148a4339dd1d, type: 3}
+  spawnObject: {fileID: 0}
 --- !u!1 &1647271002
 GameObject:
   m_ObjectHideFlags: 0
