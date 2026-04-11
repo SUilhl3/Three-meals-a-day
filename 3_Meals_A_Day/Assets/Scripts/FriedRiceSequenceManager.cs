@@ -30,6 +30,9 @@ public class FriedRiceSequenceManager : MonoBehaviour
     public GameObject oliveOilBottle;
     public GameObject oliveOilLiquid;
 
+    [Header("Step 3 Objects")]
+    public Color nextGarlicColor;
+
     [Header("Step 4 Objects")]
     public GameObject soySauceBottle;
     public Color nextOilColor;

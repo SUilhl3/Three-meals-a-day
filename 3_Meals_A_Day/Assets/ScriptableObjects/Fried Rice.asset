@@ -25,7 +25,7 @@ MonoBehaviour:
     instructions: Transfer the cut garlic to a pan on the stove
     ingredient: Cut Garlic
     utensil: Pan
-    ingredientNeeded: {fileID: 179382470599172945, guid: a58d0bf3fd609f642a24236e84fbf291, type: 3}
+    ingredientNeeded: {fileID: 917523569501467731, guid: 89a0d0e617ab7d54fbac7255ca005be3, type: 3}
     station: Stove
   - stepName: Add Olive Oil
     instructions: Add some olive oil to the pan with the garlic
