@@ -31,7 +31,7 @@ public class FriedRiceSequenceManager : MonoBehaviour
     public GameObject oliveOilLiquid;
 
     [Header("Step 3 Objects")]
-    public Color nextGarlicColor;
+    public GameObject brownedGarlic;
 
     [Header("Step 4 Objects")]
     public GameObject soySauceBottle;
@@ -199,8 +199,8 @@ public class FriedRiceSequenceManager : MonoBehaviour
         Debug.Log("Playing sequence for step 3: " + friedRiceRecipe.stepsList[3].stepName);
 
         //some animation for cooking garlic 
-
-        yield return new WaitForSeconds(2f);
+        Destroy(cutGarlic);
+        brownedGarlic.SetActive(true);
 
         yield return null;
     }
@@ -248,7 +248,7 @@ public class FriedRiceSequenceManager : MonoBehaviour
         Destroy(oliveOilLiquid);
         Destroy(butter);
         Destroy(rice);
-        Destroy(cutGarlic);
+        Destroy(brownedGarlic);
         finishedRice.SetActive(true);
         pan.GetComponent<Ingredient>().enabled = true; // so you can pick up the pan after the rice is done
         yield return null;

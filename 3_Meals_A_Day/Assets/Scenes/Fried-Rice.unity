@@ -2792,6 +2792,16 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519047623}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &529482689 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1879939501320412233, guid: 1aabc83d56461d341844ee7651b08f35, type: 3}
+  m_PrefabInstance: {fileID: 1804229235011466607}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &529482690 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 992783488901175342, guid: 1aabc83d56461d341844ee7651b08f35, type: 3}
+  m_PrefabInstance: {fileID: 1804229235011466607}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &536455905 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 917523569501467731, guid: 89a0d0e617ab7d54fbac7255ca005be3, type: 3}
@@ -3846,7 +3856,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 529482690}
   m_Father: {fileID: 646167206}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &721868439 stripped
@@ -11637,7 +11648,7 @@ MonoBehaviour:
   cutGarlic: {fileID: 1453919388}
   oliveOilBottle: {fileID: 135499929}
   oliveOilLiquid: {fileID: 1389395825}
-  nextGarlicColor: {r: 0.735849, g: 0.43750355, b: 0.03818085, a: 0}
+  brownedGarlic: {fileID: 529482689}
   soySauceBottle: {fileID: 1286258706}
   nextOilColor: {r: 0.254717, g: 0.14304987, b: 0.0036044791, a: 0}
   salt: {fileID: 563074095}
@@ -14318,6 +14329,95 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1587264332}
   m_SourcePrefab: {fileID: 100100000, guid: 6fd1b1f31d471954994a4726f2f39b5f, type: 3}
+--- !u!1001 &1804229235011466607
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 721041519}
+    m_Modifications:
+    - target: {fileID: 936775944238236627, guid: 1aabc83d56461d341844ee7651b08f35, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ae33fb3b445779644b4444e82e6f72de, type: 2}
+    - target: {fileID: 957206763342226600, guid: 1aabc83d56461d341844ee7651b08f35, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ae33fb3b445779644b4444e82e6f72de, type: 2}
+    - target: {fileID: 992783488901175342, guid: 1aabc83d56461d341844ee7651b08f35, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.2215004
+      objectReference: {fileID: 0}
+    - target: {fileID: 992783488901175342, guid: 1aabc83d56461d341844ee7651b08f35, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.17110002
+      objectReference: {fileID: 0}
+    - target: {fileID: 992783488901175342, guid: 1aabc83d56461d341844ee7651b08f35, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.3399
+      objectReference: {fileID: 0}
+    - target: {fileID: 992783488901175342, guid: 1aabc83d56461d341844ee7651b08f35, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 992783488901175342, guid: 1aabc83d56461d341844ee7651b08f35, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 992783488901175342, guid: 1aabc83d56461d341844ee7651b08f35, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 992783488901175342, guid: 1aabc83d56461d341844ee7651b08f35, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 992783488901175342, guid: 1aabc83d56461d341844ee7651b08f35, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 992783488901175342, guid: 1aabc83d56461d341844ee7651b08f35, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 992783488901175342, guid: 1aabc83d56461d341844ee7651b08f35, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1272117878539748449, guid: 1aabc83d56461d341844ee7651b08f35, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ae33fb3b445779644b4444e82e6f72de, type: 2}
+    - target: {fileID: 1879939501320412233, guid: 1aabc83d56461d341844ee7651b08f35, type: 3}
+      propertyPath: m_Name
+      value: Cut Garlic
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879939501320412233, guid: 1aabc83d56461d341844ee7651b08f35, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2069501960304670959, guid: 1aabc83d56461d341844ee7651b08f35, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ae33fb3b445779644b4444e82e6f72de, type: 2}
+    - target: {fileID: 2114395561409721862, guid: 1aabc83d56461d341844ee7651b08f35, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ae33fb3b445779644b4444e82e6f72de, type: 2}
+    - target: {fileID: 3686803380614535153, guid: 1aabc83d56461d341844ee7651b08f35, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ae33fb3b445779644b4444e82e6f72de, type: 2}
+    - target: {fileID: 7139185874664615212, guid: 1aabc83d56461d341844ee7651b08f35, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ae33fb3b445779644b4444e82e6f72de, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1aabc83d56461d341844ee7651b08f35, type: 3}
 --- !u!1001 &2258758431561262264
 PrefabInstance:
   m_ObjectHideFlags: 0
