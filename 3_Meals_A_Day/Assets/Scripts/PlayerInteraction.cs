@@ -4,6 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerInteraction : MonoBehaviour
@@ -70,6 +71,21 @@ public class PlayerInteraction : MonoBehaviour
     {
         recipePanel.SetActive(false);
     }   
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void NextLevel()
+    {
+        SceneManager.LoadScene("Carbonara");
+    }
 
     public void MixIngredients()
     {

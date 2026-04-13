@@ -18,6 +18,7 @@ public class FriedRiceSequenceManager : MonoBehaviour
     public TextMeshProUGUI recipeInstructionText;
     public TextMeshProUGUI feedbackText;
     public Button nextStepButton;
+    public GameObject endLevelPanel;
 
     [Header("Sequence Objects")]
     public GameObject knifeObject;
@@ -77,8 +78,8 @@ public class FriedRiceSequenceManager : MonoBehaviour
         {
             Debug.Log("Recipe completed!");
             nextStepButton.gameObject.SetActive(false);
-            feedbackText.gameObject.SetActive(true);
-            feedbackText.text = "Recipe Completed!";
+            feedbackText.gameObject.SetActive(false);
+            endLevelPanel.SetActive(true);
         }
     }
 
