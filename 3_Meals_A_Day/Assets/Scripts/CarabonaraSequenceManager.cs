@@ -327,7 +327,8 @@ public class CarabonaraSequenceManager : MonoBehaviour
     private IEnumerator playSequence15()
     {
         //Serve on plate
-
+        Debug.Log("Playing sequence for step 16: " + carbonaraRecipe.stepsList[15].stepName);
+        carbonara.SetActive(true);
         yield return null;
     }
 }
