@@ -14,4 +14,100 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Recipe
   recipeName: Carbonara
   steps: 12
-  stepsList: []
+  stepsList:
+  - stepName: Get the yolks
+    instructions: Break two eggs and gather the yolks and place them in a bowl.
+    ingredient: 2 Eggs
+    utensil: Bowl
+    ingredientNeeded: {fileID: 0}
+    station: 
+  - stepName: Greate Cheese
+    instructions: Grab your cheese grater and grate the cheese
+    ingredient: Grated Cheese
+    utensil: Bowl (with yolks), Cheese Grater
+    ingredientNeeded: {fileID: 0}
+    station: 
+  - stepName: Add black pepper
+    instructions: Pour black pepper into the bowl
+    ingredient: Black pepper
+    utensil: jar of pepper
+    ingredientNeeded: {fileID: 0}
+    station: 
+  - stepName: Mix to make cheese sauce
+    instructions: Mix them together
+    ingredient: Cheese mix
+    utensil: Whisk
+    ingredientNeeded: {fileID: 0}
+    station: 
+  - stepName: Cut meat
+    instructions: Cut the selected meat into cubes
+    ingredient: Meat
+    utensil: Knife
+    ingredientNeeded: {fileID: 0}
+    station: 
+  - stepName: Place the meat in a pan
+    instructions: Place the cute meat into a pan and cook till it changes color.
+    ingredient: Cut meat
+    utensil: pan
+    ingredientNeeded: {fileID: 0}
+    station: 
+  - stepName: Pour water into the pot
+    instructions: Pour water into the pot and wait for it to boil
+    ingredient: Water
+    utensil: Pot
+    ingredientNeeded: {fileID: 0}
+    station: 
+  - stepName: Place Noodles in pot
+    instructions: Place the noodles and stir occasionally until cooked
+    ingredient: Noodles
+    utensil: Spoon
+    ingredientNeeded: {fileID: 0}
+    station: 
+  - stepName: Gather Pasta Water
+    instructions: Gather Pasta Water
+    ingredient: Pasta Water
+    utensil: Pitcher
+    ingredientNeeded: {fileID: 0}
+    station: 
+  - stepName: Collect Pasta
+    instructions: Collect cooked pasta.
+    ingredient: cooked pasta
+    utensil: Bowl and spoon
+    ingredientNeeded: {fileID: 0}
+    station: 
+  - stepName: Place Pasta in the Pan with Cooked Meat
+    instructions: Place Pasta into the Pan
+    ingredient: Cooked Pasta
+    utensil: pan
+    ingredientNeeded: {fileID: 0}
+    station: 
+  - stepName: Place Pasta Water in the Pan
+    instructions: Place the pasta water into the pan
+    ingredient: Pasta water
+    utensil: pan and pitcher
+    ingredientNeeded: {fileID: 0}
+    station: 
+  - stepName: Mix Time
+    instructions: Mix the pan till spreaded evenly
+    ingredient: mixed pasta and meat
+    utensil: spoon
+    ingredientNeeded: {fileID: 0}
+    station: 
+  - stepName: Pour the Cheese
+    instructions: Grab the Cheese sauce adn add it into the pan
+    ingredient: Cheese sauce
+    utensil: bowl
+    ingredientNeeded: {fileID: 0}
+    station: 
+  - stepName: Mix them together
+    instructions: Mix them together.
+    ingredient: Cheese sauce and mixed pasta and meat
+    utensil: spoon
+    ingredientNeeded: {fileID: 0}
+    station: 
+  - stepName: Plate the meal!
+    instructions: Bring the pot to the plate and serve
+    ingredient: almost carbonara
+    utensil: pan
+    ingredientNeeded: {fileID: 0}
+    station: 
