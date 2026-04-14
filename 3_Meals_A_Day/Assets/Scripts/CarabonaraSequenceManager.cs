@@ -34,6 +34,8 @@ public class CarabonaraSequenceManager : MonoBehaviour
     public static CarabonaraSequenceManager Instance {  get; private set; }
     public Recipe carbonaraRecipe;
 
+    public GameObject endLevelPanel;
+
     [SerializeField] private Dictionary<int, bool> carbonaraSequenceFlags = new Dictionary<int, bool>();
     public int currentStep = 0;
 
@@ -329,6 +331,7 @@ public class CarabonaraSequenceManager : MonoBehaviour
         //Serve on plate
         Debug.Log("Playing sequence for step 16: " + carbonaraRecipe.stepsList[15].stepName);
         carbonara.SetActive(true);
+        endLevelPanel.SetActive(true);
         yield return null;
     }
 }

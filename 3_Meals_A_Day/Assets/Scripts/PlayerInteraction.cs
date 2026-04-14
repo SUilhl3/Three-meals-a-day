@@ -74,12 +74,17 @@ public class PlayerInteraction : MonoBehaviour
 
     public void BackToMenu()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void NextLevelFriedRice()
+    {
+        SceneManager.LoadScene("Fried-Rice");
     }
 
     public void NextLevel()

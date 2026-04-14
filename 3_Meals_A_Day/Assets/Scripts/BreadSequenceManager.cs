@@ -14,6 +14,7 @@ public class BreadSequenceManager : MonoBehaviour
     public int currentStep = 0;
 
     public TextMeshProUGUI recipeInstructionText;
+    public GameObject endLevelPanel;
 
     [Header("Sequence Objects")]
     public GameObject mixVolumeObject;
@@ -461,6 +462,8 @@ public class BreadSequenceManager : MonoBehaviour
         Debug.Log("Playing sequence for step 20: " + breadRecipe.stepsList[20].stepName);
         
         trayObject.GetComponent<Animator>().SetBool("removeBread", true);
+
+        endLevelPanel.SetActive(true);
 
         yield return null;
     }
