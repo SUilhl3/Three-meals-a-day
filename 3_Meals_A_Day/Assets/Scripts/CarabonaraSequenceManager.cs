@@ -70,7 +70,6 @@ public class CarabonaraSequenceManager : MonoBehaviour
     public GameObject cookedMeat;
 
     [Header("Step 7 Objects")]
-    public GameObject pitcher;
     public GameObject water;
     public GameObject pot;
 
