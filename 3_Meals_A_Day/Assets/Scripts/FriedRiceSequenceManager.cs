@@ -19,6 +19,8 @@ public class FriedRiceSequenceManager : MonoBehaviour
     public TextMeshProUGUI feedbackText;
     public Button nextStepButton;
     public GameObject endLevelPanel;
+    public Button hideShowRecipeButton;
+    private bool isRecipeVisible = true;
 
     [Header("Sequence Objects")]
     public GameObject knifeObject;
@@ -105,6 +107,20 @@ public class FriedRiceSequenceManager : MonoBehaviour
         playCurrentSequence();
         setFlag(currentStep, true);
         check();
+    }
+
+    public void ToggleRecipe()
+    {
+        isRecipeVisible = !isRecipeVisible;
+        recipeInstructionText.gameObject.SetActive(isRecipeVisible);
+            if (isRecipeVisible)
+            {
+                hideShowRecipeButton.GetComponentInChildren<TextMeshProUGUI>().text = "Hide Recipe";
+            }
+            else
+            {
+                hideShowRecipeButton.GetComponentInChildren<TextMeshProUGUI>().text = "Show Recipe";
+        }
     }
 
     public void playCurrentSequence()
@@ -264,7 +280,7 @@ public class FriedRiceSequenceManager : MonoBehaviour
 
 
     private void setFlag(int stepIndex, bool value) => riceSequenceFlags[stepIndex] = value;
-    private void updateRecipeText() => recipeInstructionText.text = friedRiceRecipe.stepsList[currentStep].instructions;
+    private void updateRecipeText() { if (isRecipeVisible) recipeInstructionText.text = friedRiceRecipe.stepsList[currentStep].instructions; }
 
     private void check()
     {
