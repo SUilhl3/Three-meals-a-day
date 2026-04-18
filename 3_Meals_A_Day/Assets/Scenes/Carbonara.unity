@@ -495,7 +495,7 @@ MonoBehaviour:
   cameraPoint: {fileID: 483363767}
   isCookingStation: 0
   buttonText: 
-  stationName: 
+  stationName: Serving
 --- !u!1 &72760378
 GameObject:
   m_ObjectHideFlags: 0
@@ -1989,6 +1989,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1963973256}
         m_TargetAssemblyTypeName: ButtonSFX, Assembly-CSharp
         m_MethodName: PlayClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 105404407}
+        m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
+        m_MethodName: MixIngredients
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5726,7 +5738,7 @@ MonoBehaviour:
   cameraPoint: {fileID: 1170550174}
   isCookingStation: 1
   buttonText: Mix
-  stationName: 
+  stationName: Mixing
 --- !u!65 &865627275
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6209,7 +6221,7 @@ MonoBehaviour:
   cameraPoint: {fileID: 753767219}
   isCookingStation: 0
   buttonText: 
-  stationName: 
+  stationName: Stove (pot)
 --- !u!23 &904884899
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7699,7 +7711,7 @@ MonoBehaviour:
   cameraPoint: {fileID: 342038697}
   isCookingStation: 0
   buttonText: 
-  stationName: 
+  stationName: Fridge
 --- !u!23 &1143911655
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13250,7 +13262,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 907956398283822691, guid: 4f04852b3a3372d45b4247abcdfdfed6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1784920494}
   m_SourcePrefab: {fileID: 100100000, guid: 4f04852b3a3372d45b4247abcdfdfed6, type: 3}
 --- !u!4 &1784920492 stripped
 Transform:
@@ -13262,6 +13277,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 907956398283822691, guid: 4f04852b3a3372d45b4247abcdfdfed6, type: 3}
   m_PrefabInstance: {fileID: 1784920491}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1784920494
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784920493}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8d88abdc97ed91e44a067dbb4193a964, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1786446115
 GameObject:
   m_ObjectHideFlags: 0
@@ -14251,7 +14288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1485319667670839895, guid: faddb7582ea378c44a767cc63fe84c89, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2294367349913659629, guid: faddb7582ea378c44a767cc63fe84c89, type: 3}
       propertyPath: m_LocalScale.x
@@ -14558,7 +14595,7 @@ MonoBehaviour:
   cameraPoint: {fileID: 130181337}
   isCookingStation: 0
   buttonText: 
-  stationName: 
+  stationName: Stove (pan)
 --- !u!23 &1959799952
 MeshRenderer:
   m_ObjectHideFlags: 0

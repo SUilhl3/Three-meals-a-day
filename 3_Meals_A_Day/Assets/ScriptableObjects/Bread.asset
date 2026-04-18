@@ -20,61 +20,61 @@ MonoBehaviour:
     ingredient: Milk
     utensil: Mixing Bowl
     ingredientNeeded: {fileID: 5697800158797286517, guid: e27740dc0f71e6242933939d6050fd41, type: 3}
-    station: 
+    station: Mixing
   - stepName: Add Yeast
     instructions: Pour yeast into the mixing bowl
     ingredient: Yeast
     utensil: Mixing Bowl
     ingredientNeeded: {fileID: 8296043022435829828, guid: 33a1525a2d9caa448b43bf0f82bf059a, type: 3}
-    station: 
+    station: Mixing
   - stepName: Add Sugar
     instructions: Pour sugar into mixing bowl
     ingredient: Sugar
     utensil: Mixing Bowl
     ingredientNeeded: {fileID: 1522475821739290524, guid: f1084d4f13668e8448e47eb18acf0edf, type: 3}
-    station: 
+    station: Mixing
   - stepName: Mix ingredients
     instructions: Mix the ingredients in the mixing bowl
     ingredient: 
     utensil: Whisk
     ingredientNeeded: {fileID: 0}
-    station: 
+    station: Mixing
   - stepName: Add egg
     instructions: Extract the yolk into the mixing bowl
     ingredient: Yolk
     utensil: Mixing Bowl
     ingredientNeeded: {fileID: 4077141521328887635, guid: 26dd2342357dc454bb29148a4339dd1d, type: 3}
-    station: 
+    station: Mixing
   - stepName: Beat the egg
     instructions: Beat the egg in the mixture
     ingredient: 
     utensil: Whisk
     ingredientNeeded: {fileID: 0}
-    station: 
+    station: Mixing
   - stepName: 'Leave the mixture alone '
     instructions: Leave the mixture alone for 5 mins
     ingredient: 
     utensil: 
     ingredientNeeded: {fileID: 0}
-    station: 
+    station: Mixing
   - stepName: Add Salt
     instructions: Add Salt to the mixture
     ingredient: Salt
     utensil: Mixing Bowl
     ingredientNeeded: {fileID: 4857173826518496482, guid: ef1d6c3713c584e4699449d682df081a, type: 3}
-    station: 
+    station: Mixing
   - stepName: Add Flour
     instructions: Add flour to the mixture
     ingredient: Flour
     utensil: Mixing Bowl
     ingredientNeeded: {fileID: 8790825536123348126, guid: 1f6bdb1c39d94cb469578289b5e4dc42, type: 3}
-    station: 
+    station: Mixing
   - stepName: Mix the ingredients again
     instructions: Mix the mixture into dough
     ingredient: 
     utensil: Spatula
     ingredientNeeded: {fileID: 0}
-    station: 
+    station: Mixing
   - stepName: Knead the bread
     instructions: Knead the bread for 10-15 mins
     ingredient: Dough
