@@ -13,7 +13,6 @@ public class PlayerInteraction : MonoBehaviour
     public Camera mainCamera;
     public GameObject recipePanel;
     public List<GameObject> ingredients; //list of ingredient prefabs 
-    public Button mixButton;
     public Recipe recipe;
     int currentRecipeStep = 0;
     public string currentStation;
@@ -35,15 +34,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 station.Interact();
                 currentStation = station.stationName;
-                if(station.isCookingStation)
-                {
-                    mixButton.gameObject.SetActive(true);
-                    mixButton.GetComponentInChildren<TextMeshProUGUI>().text = station.buttonText;
-                }
-                else
-                {
-                    mixButton.gameObject.SetActive(false);
-                }
+
             }
 
             //used to add ingredient to list (inventory) and destroy the ingredient in the scene
@@ -59,7 +50,6 @@ public class PlayerInteraction : MonoBehaviour
     public void BackToMain()
     {
         CameraController.Instance.BackToBeg();
-        mixButton.gameObject.SetActive(false);
     }
 
     public void OpenRecipePanel()

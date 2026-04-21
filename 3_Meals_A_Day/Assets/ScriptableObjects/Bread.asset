@@ -80,66 +80,66 @@ MonoBehaviour:
     ingredient: Dough
     utensil: Hands
     ingredientNeeded: {fileID: 0}
-    station: 
+    station: Tray
   - stepName: Add Butter
     instructions: Add butter to the dough
     ingredient: Butter
     utensil: 
     ingredientNeeded: {fileID: 4566532155570362071, guid: 83d7826ea0b312243a3dcd9007cb467f, type: 3}
-    station: 
+    station: Tray
   - stepName: Knead Bread with Butter
     instructions: Knead the bread again for another 10 mins. Make sure the butter
       is completely mixed in with the dough
     ingredient: 
     utensil: Hands
     ingredientNeeded: {fileID: 0}
-    station: 
+    station: Tray
   - stepName: Leave Dough
     instructions: 'Cover the bread and let it rise until the dough is double it''s
       original size '
     ingredient: 
     utensil: 
     ingredientNeeded: {fileID: 0}
-    station: 
+    station: Tray
   - stepName: Divide dough
     instructions: Divide the dough into 6 pieces
     ingredient: 
     utensil: Hands
     ingredientNeeded: {fileID: 0}
-    station: 
+    station: Tray
   - stepName: Let it rise again
     instructions: Cover the dough balls and let them rise for an hour
     ingredient: 
     utensil: Hands
     ingredientNeeded: {fileID: 0}
-    station: 
+    station: Tray
   - stepName: Pre-heat oven
     instructions: Pre-heat the oven to 170 degrees celsius
     ingredient: 
     utensil: Oven
     ingredientNeeded: {fileID: 0}
-    station: 
+    station: Oven
   - stepName: Bake bread
     instructions: Open the oven and place the bread inside
     ingredient: 
     utensil: Oven
     ingredientNeeded: {fileID: 0}
-    station: 
+    station: Oven
   - stepName: Wait for bread
     instructions: Let the bread bake for about 15 mins
     ingredient: 
     utensil: Oven
     ingredientNeeded: {fileID: 0}
-    station: 
+    station: Oven
   - stepName: Remove Bread from Oven
     instructions: Open the oven and remove the bread
     ingredient: 
     utensil: Oven
     ingredientNeeded: {fileID: 0}
-    station: 
+    station: Oven
   - stepName: Place bread at serving station
     instructions: Place the bread on the plate
     ingredient: 
     utensil: Plate
     ingredientNeeded: {fileID: 0}
-    station: 
+    station: Serving

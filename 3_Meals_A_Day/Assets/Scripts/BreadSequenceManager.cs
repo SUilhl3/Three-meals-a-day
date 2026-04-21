@@ -14,6 +14,7 @@ public class BreadSequenceManager : MonoBehaviour
     public int currentStep = 0;
 
     public TextMeshProUGUI recipeInstructionText;
+    public TextMeshProUGUI feedbackText;
     public GameObject endLevelPanel;
 
     [Header("Sequence Objects")]
@@ -98,10 +99,49 @@ public class BreadSequenceManager : MonoBehaviour
     //function for setting the current flag to true, continuing to the next step
     public void pressedButton()
     {
+        if (!CheckStep())
+        {
+            Debug.Log("Conditions not met for current step");
+            return;
+        }
         bool playSeq = playCurrentSequence();
         if (!playSeq) { }
         else { setFlag(currentStep, true); }
         check();
+    }
+
+    //checks if player has met conditions for step (in right station and with right items)
+    private bool CheckStep()
+    {
+        PlayerInteraction player = FindFirstObjectByType<PlayerInteraction>();
+
+        if (player.currentStation == breadRecipe.stepsList[currentStep].station)
+        {
+
+            if (breadRecipe.stepsList[currentStep].ingredientNeeded == null || player.ingredients.Contains(breadRecipe.stepsList[currentStep].ingredientNeeded))
+            {
+                StartCoroutine(ShowMessageCoroutine("Correct! Move to the next step."));
+                return true;
+            }
+            else
+            {
+                StartCoroutine(ShowMessageCoroutine("Missing Ingredient"));
+                return false;
+            }
+        }
+        else
+        {
+            StartCoroutine(ShowMessageCoroutine("Not In The Correct Station"));
+            return false;
+        }
+    }
+
+    private IEnumerator ShowMessageCoroutine(string message)
+    {
+        feedbackText.text = message;
+        feedbackText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        feedbackText.gameObject.SetActive(false);
     }
 
     public bool playCurrentSequence()
