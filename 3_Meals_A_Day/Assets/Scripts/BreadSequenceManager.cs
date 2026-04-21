@@ -503,6 +503,8 @@ public class BreadSequenceManager : MonoBehaviour
         
         trayObject.GetComponent<Animator>().SetBool("removeBread", true);
 
+        yield return new WaitForSeconds(3f); //let animation play before opening end level panel
+
         endLevelPanel.SetActive(true);
 
         yield return null;

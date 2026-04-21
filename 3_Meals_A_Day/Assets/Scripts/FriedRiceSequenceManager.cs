@@ -76,13 +76,7 @@ public class FriedRiceSequenceManager : MonoBehaviour
 
     private void Update()
     {
-        if (currentStep == friedRiceRecipe.stepsList.Length - 1 && riceSequenceFlags[currentStep] == true)
-        {
-            Debug.Log("Recipe completed!");
-            nextStepButton.gameObject.SetActive(false);
-            feedbackText.gameObject.SetActive(false);
-            endLevelPanel.SetActive(true);
-        }
+
     }
 
     private void InitializeFlags()
@@ -275,6 +269,8 @@ public class FriedRiceSequenceManager : MonoBehaviour
     {
         Debug.Log("Playing sequence for step 8: " + friedRiceRecipe.stepsList[8].stepName);
         platedRice.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        endLevelPanel.SetActive(true);
         yield return null;
     }
 
