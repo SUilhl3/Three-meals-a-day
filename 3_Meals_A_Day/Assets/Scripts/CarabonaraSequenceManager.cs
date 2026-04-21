@@ -225,12 +225,30 @@ public class CarabonaraSequenceManager : MonoBehaviour
         //TO animations to grate cheese
         Debug.Log("Playing sequence for step 2: " + carbonaraRecipe.stepsList[1].stepName);
         cheese.SetActive(true);
+        gratedCheese.GetComponent<Animator>().SetBool("pickup", true);
         yield return new WaitForSeconds(3f);
+
+        gratedCheese.GetComponent<Animator>().SetBool("pickup", false);
+        gratedCheese.GetComponent<Animator>().SetBool("idle", true);
+        yield return new WaitForSeconds(3f);
+
+        gratedCheese.GetComponent<Animator>().SetBool("cheese", true);
+        yield return new WaitForSeconds(3f);
+
+        gratedCheese.GetComponent<Animator>().SetBool("cheese", false);
+        gratedCheese.GetComponent<Animator>().SetBool("shredding", true);
+        yield return new WaitForSeconds(3f);
+
+        gratedCheese.GetComponent<Animator>().SetBool("shredding", false);
         cheese.SetActive(false);
+        gratedCheese.GetComponent<Animator>().SetBool("idle", false);
+        gratedCheese.GetComponent<Animator>().SetBool("back", true);
+        yield return new WaitForSeconds(3f);
+
+        gratedCheese.GetComponent<Animator>().SetBool("back", false);
         gratedCheese.SetActive(true);
 
         yield return null;
-
     }
     private IEnumerator playSequence2()
     {
@@ -269,60 +287,85 @@ public class CarabonaraSequenceManager : MonoBehaviour
     private IEnumerator playSequence5()
     {
         //Move the meat to a pan and cook it
-
+        Debug.Log("Playing sequence for step 5: " + carbonaraRecipe.stepsList[5].stepName);
+        choppedMeat.SetActive(true);
+        choppedMeat.SetActive(false);
+        cookedMeat.SetActive(true);
         yield return null;
     }
     private IEnumerator playSequence6()
     {
         //pour water into a pot and wait for it to boil
+        Debug.Log("Playing sequence for step 6: " + carbonaraRecipe.stepsList[6].stepName);
 
         yield return null;
     }
     private IEnumerator playSequence7()
     {
+        Debug.Log("Playing sequence for step 7: " + carbonaraRecipe.stepsList[7].stepName);
         //place noodles into water and stir them until they are cooked
+        spoonObject.GetComponent<Animator>().SetBool("potMix", true);
+        spoonObject.GetComponent<Animator>().SetBool("reset", true);
+        yield return new WaitForSeconds(8f);
 
+        spoonObject.GetComponent<Animator>().SetBool("potMix", false);
+        spoonObject.GetComponent<Animator>().SetBool("reset", false);
         yield return null;
     }
     private IEnumerator playSequence8()
     {
         //collect pasta water
-
+        Debug.Log("Playing sequence for step 8: " + carbonaraRecipe.stepsList[8].stepName);
         yield return null;
     }
     private IEnumerator playSequence9()
     {
+        Debug.Log("Playing sequence for step 9: " + carbonaraRecipe.stepsList[9].stepName);
         //Collect noodles
-
+        spoonObject.GetComponent<Animator>().SetBool("scoop", true);
+        spoonObject.GetComponent<Animator>().SetBool("reset", true);
+        yield return new WaitForSeconds(8f);
+        spoonObject.GetComponent<Animator>().SetBool("scoop", false);
+        spoonObject.GetComponent<Animator>().SetBool("reset", false);
+        cookedPasta.SetActive(true);
         yield return null;
     }
     private IEnumerator playSequence10()
     {
         //place noodles in the pan with the meat 
-
+        Debug.Log("Playing sequence for step 10: " + carbonaraRecipe.stepsList[10].stepName);
         yield return null;
     }
     private IEnumerator playSequence11()
     {
         //pour the pasta water
-
+        Debug.Log("Playing sequence for step 11: " + carbonaraRecipe.stepsList[11].stepName);
         yield return null;
     }
     private IEnumerator playSequence12()
     {
         //mix
+        Debug.Log("Playing sequence for step 12: " + carbonaraRecipe.stepsList[12].stepName);
+        spoonObject.GetComponent<Animator>().SetBool("panMix", true);
+        spoonObject.GetComponent<Animator>().SetBool("reset", true);
+        yield return new WaitForSeconds(8f);
+        spoonObject.GetComponent<Animator>().SetBool("panMix", false);
+        spoonObject.GetComponent<Animator>().SetBool("reset", false);
         yield return null;
     }
     private IEnumerator playSequence13()
     {
         //pour cheese mix made in step 4
-
+        Debug.Log("Playing sequence for step 13: " + carbonaraRecipe.stepsList[13].stepName);
         yield return null;
     }
     private IEnumerator playSequence14()
     {
         //mix
-
+        Debug.Log("Playing sequence for step 14: " + carbonaraRecipe.stepsList[14].stepName);
+        spoonObject.GetComponent<Animator>().SetBool("panMix", true);
+        spoonObject.GetComponent<Animator>().SetBool("reset", true);
+        yield return new WaitForSeconds(8f);
         yield return null;
     }
     private IEnumerator playSequence15()
