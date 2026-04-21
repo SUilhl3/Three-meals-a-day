@@ -44,6 +44,8 @@ public class CarabonaraSequenceManager : MonoBehaviour
     public TextMeshProUGUI recipeInstructionText;
     public TextMeshProUGUI feedbackText;
     public Button nextStepButton;
+    public Button hideShowRecipeButton;
+    private bool isRecipeVisible = true;
 
     [Header("Sequence Objects")]
     public GameObject knifeObject;
@@ -133,6 +135,20 @@ public class CarabonaraSequenceManager : MonoBehaviour
             carbonaraSequenceFlags[i] = false;
             updateRecipeText();
             updateRecipeOverview();
+        }
+    }
+
+    public void ToggleRecipe()
+    {
+        isRecipeVisible = !isRecipeVisible;
+        recipeInstructionText.gameObject.SetActive(isRecipeVisible);
+        if (isRecipeVisible)
+        {
+            hideShowRecipeButton.GetComponentInChildren<TextMeshProUGUI>().text = "Hide Recipe";
+        }
+        else
+        {
+            hideShowRecipeButton.GetComponentInChildren<TextMeshProUGUI>().text = "Show Recipe";
         }
     }
     public void pressedButton()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections;
 using TMPro;
 using System.Reflection;
+using UnityEngine.UI;
 
 public class BreadSequenceManager : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class BreadSequenceManager : MonoBehaviour
     public TextMeshProUGUI recipeInstructionText;
     public TextMeshProUGUI feedbackText;
     public GameObject endLevelPanel;
+    public Button hideShowRecipeButton;
+    private bool isRecipeVisible = true;
 
     [Header("Sequence Objects")]
     public GameObject mixVolumeObject;
@@ -83,6 +86,20 @@ public class BreadSequenceManager : MonoBehaviour
     private void Update()
     {
 
+    }
+
+    public void ToggleRecipe()
+    {
+        isRecipeVisible = !isRecipeVisible;
+        recipeInstructionText.gameObject.SetActive(isRecipeVisible);
+        if (isRecipeVisible)
+        {
+            hideShowRecipeButton.GetComponentInChildren<TextMeshProUGUI>().text = "Hide Recipe";
+        }
+        else
+        {
+            hideShowRecipeButton.GetComponentInChildren<TextMeshProUGUI>().text = "Show Recipe";
+        }
     }
 
     private void InitializeFlags()

@@ -176,9 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Recipe
-
-'
+  m_text: Hide Recipe
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4292,7 +4290,7 @@ GameObject:
   - component: {fileID: 660376113}
   - component: {fileID: 660376112}
   m_Layer: 5
-  m_Name: Recipe Button
+  m_Name: Hide/Show Recipe Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4315,7 +4313,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -1515.7, y: 630}
+  m_AnchoredPosition: {x: -93.9, y: 308.4}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &660376112
@@ -4362,9 +4360,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 162720218}
-        m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
-        m_MethodName: OpenRecipePanel
+      - m_Target: {fileID: 1393359474}
+        m_TargetAssemblyTypeName: BreadSequenceManager, Assembly-CSharp
+        m_MethodName: ToggleRecipe
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7893,7 +7891,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 113, y: 150}
+  m_AnchoredPosition: {x: 1543.9, y: 40.7}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1200838702
@@ -8290,7 +8288,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 701.43, y: 0}
+  m_AnchoredPosition: {x: 723.8, y: 103.2}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1247133954
@@ -9504,6 +9502,7 @@ MonoBehaviour:
   recipeInstructionText: {fileID: 565467141}
   feedbackText: {fileID: 482560421}
   endLevelPanel: {fileID: 1487724470}
+  hideShowRecipeButton: {fileID: 660376112}
   mixVolumeObject: {fileID: 896441803}
   mixVolumeAnimator: {fileID: 0}
   milkObject: {fileID: 1999890418}
