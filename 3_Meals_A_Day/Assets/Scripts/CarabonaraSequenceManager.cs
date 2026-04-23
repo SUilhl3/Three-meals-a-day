@@ -51,6 +51,7 @@ public class CarabonaraSequenceManager : MonoBehaviour
     public GameObject knifeObject;
     public GameObject whiskObject;
     public GameObject spoonObject;
+    public GameObject bowl;
     public GameObject mixVolumeObject;
 
     [Header("Step 1 Objects")]
@@ -63,6 +64,9 @@ public class CarabonaraSequenceManager : MonoBehaviour
 
     [Header("Step 3 Object")]
     public GameObject blackPepper;
+
+    [Header("Step 4 Object")]
+    public GameObject cheeseMix;
 
     [Header("Step 5 Objects")]
     public GameObject meat;
@@ -96,7 +100,7 @@ public class CarabonaraSequenceManager : MonoBehaviour
     public GameObject mixedPastaAndMeat;
 
     [Header("Step 14 Objects")]
-    public GameObject cheeseMix;
+    public GameObject cheeseMix2;
     public GameObject almostMadeCarbonara;
 
     [Header("Step 16 Object")]
@@ -241,27 +245,25 @@ public class CarabonaraSequenceManager : MonoBehaviour
         //TO animations to grate cheese
         Debug.Log("Playing sequence for step 2: " + carbonaraRecipe.stepsList[1].stepName);
         cheese.SetActive(true);
-        gratedCheese.GetComponent<Animator>().SetBool("pickup", true);
-        yield return new WaitForSeconds(3f);
+        yield return null;
+        cheeseGrater.GetComponent<Animator>().SetBool("pickup", true);
+        yield return new WaitForSeconds(1f);
 
-        gratedCheese.GetComponent<Animator>().SetBool("pickup", false);
-        gratedCheese.GetComponent<Animator>().SetBool("idle", true);
-        yield return new WaitForSeconds(3f);
+        cheeseGrater.GetComponent<Animator>().SetBool("pickup", false);
+        cheeseGrater.GetComponent<Animator>().SetBool("idle", true);
+        yield return new WaitForSeconds(1f);
 
-        gratedCheese.GetComponent<Animator>().SetBool("cheese", true);
-        yield return new WaitForSeconds(3f);
+        cheese.GetComponent<Animator>().SetBool("shredded", true);
+        yield return new WaitForSeconds(6f);
 
-        gratedCheese.GetComponent<Animator>().SetBool("cheese", false);
-        gratedCheese.GetComponent<Animator>().SetBool("shredding", true);
-        yield return new WaitForSeconds(3f);
-
-        gratedCheese.GetComponent<Animator>().SetBool("shredding", false);
+        cheese.GetComponent<Animator>().SetBool("shredded", false);
         cheese.SetActive(false);
-        gratedCheese.GetComponent<Animator>().SetBool("idle", false);
-        gratedCheese.GetComponent<Animator>().SetBool("back", true);
-        yield return new WaitForSeconds(3f);
+        cheeseGrater.GetComponent<Animator>().SetBool("idle", false);
+        yield return new WaitForSeconds(1f);
+        cheeseGrater.GetComponent<Animator>().SetBool("back", true);
+        yield return new WaitForSeconds(1f);
 
-        gratedCheese.GetComponent<Animator>().SetBool("back", false);
+        cheeseGrater.GetComponent<Animator>().SetBool("back", false);
         gratedCheese.SetActive(true);
 
         yield return null;
@@ -285,7 +287,9 @@ public class CarabonaraSequenceManager : MonoBehaviour
         whiskObject.GetComponent<Animator>().SetBool("reset", true);
         yield return new WaitForSeconds(8f);
 
-        mixVolumeObject.GetComponent<Renderer>().material.SetColor("_Color", Color.softYellow);
+        cheeseMix.SetActive(true);
+        gratedCheese.SetActive(false);
+        bowl.SetActive(false);
         yield return new WaitForSeconds(2f);
 
         whiskObject.GetComponent<Animator>().SetBool("whisk", false);
@@ -305,15 +309,14 @@ public class CarabonaraSequenceManager : MonoBehaviour
         //Move the meat to a pan and cook it
         Debug.Log("Playing sequence for step 5: " + carbonaraRecipe.stepsList[5].stepName);
         choppedMeat.SetActive(true);
-        choppedMeat.SetActive(false);
-        cookedMeat.SetActive(true);
         yield return null;
     }
     private IEnumerator playSequence6()
     {
         //pour water into a pot and wait for it to boil
         Debug.Log("Playing sequence for step 6: " + carbonaraRecipe.stepsList[6].stepName);
-
+        choppedMeat.SetActive(false);  
+        cookedMeat.SetActive(true);
         yield return null;
     }
     private IEnumerator playSequence7()
