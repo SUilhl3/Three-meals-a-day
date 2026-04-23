@@ -52,10 +52,10 @@ public class CarabonaraSequenceManager : MonoBehaviour
     public GameObject whiskObject;
     public GameObject spoonObject;
     public GameObject bowl;
-    public GameObject mixVolumeObject;
 
     [Header("Step 1 Objects")]
     public GameObject eggs;
+    public GameObject eggmix;
 
     [Header("Step 2 Objects")]
     public GameObject cheese;
@@ -64,8 +64,10 @@ public class CarabonaraSequenceManager : MonoBehaviour
 
     [Header("Step 3 Object")]
     public GameObject blackPepper;
+    public GameObject spilledPepper;
 
     [Header("Step 4 Object")]
+    public GameObject bowl1;
     public GameObject cheeseMix;
 
     [Header("Step 5 Objects")]
@@ -73,11 +75,12 @@ public class CarabonaraSequenceManager : MonoBehaviour
     public GameObject choppedMeat;
 
     [Header("Step 6 Object")]
+    public GameObject choppedMeat2;
     public GameObject cookedMeat;
 
     [Header("Step 7 Objects")]
     public GameObject water;
-    public GameObject pot;
+    public GameObject hotwater;
 
     [Header("Step 8 Objects")]
     public GameObject pasta;
@@ -88,10 +91,10 @@ public class CarabonaraSequenceManager : MonoBehaviour
 
     [Header("Step 10 Objects")]
     public GameObject cookedPastaOutOfWater;
+    public GameObject bowl2;
 
     [Header("Step 11 Objects")]
     public GameObject cookedPastaOutOfWater2;
-    public GameObject cookedMeat2;
 
     [Header("Step 12 Objects")]
     public GameObject cookedPastaWater2;
@@ -237,6 +240,7 @@ public class CarabonaraSequenceManager : MonoBehaviour
 
         yield return new WaitForSeconds(3f);
         eggs.SetActive(false);
+        eggmix.SetActive(true);
         yield return null;
     }
     private IEnumerator playSequence1()
@@ -258,38 +262,40 @@ public class CarabonaraSequenceManager : MonoBehaviour
 
         cheese.GetComponent<Animator>().SetBool("shredded", false);
         cheese.SetActive(false);
+        gratedCheese.SetActive(true);
         cheeseGrater.GetComponent<Animator>().SetBool("idle", false);
         yield return new WaitForSeconds(1f);
         cheeseGrater.GetComponent<Animator>().SetBool("back", true);
         yield return new WaitForSeconds(1f);
-
         cheeseGrater.GetComponent<Animator>().SetBool("back", false);
-        gratedCheese.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        
 
         yield return null;
     }
     private IEnumerator playSequence2()
     {
         //pour black pepper 
-        //TO DO make the bowl have yolks, cheese and pepper on it
         Debug.Log("Playing sequence for step 3: " + carbonaraRecipe.stepsList[2].stepName);
         blackPepper.SetActive(true);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
         blackPepper.SetActive(false);
+        spilledPepper.SetActive(true);
         yield return null;
     }
     private IEnumerator playSequence3()
     {
         //mix
-        //TO DO 
-        Debug.Log("Playing sequence for step 3: " + carbonaraRecipe.stepsList[3].stepName);
+        Debug.Log("Playing sequence for step 4: " + carbonaraRecipe.stepsList[3].stepName);
         whiskObject.GetComponent<Animator>().SetBool("whisk", true);
         whiskObject.GetComponent<Animator>().SetBool("reset", true);
         yield return new WaitForSeconds(8f);
 
         cheeseMix.SetActive(true);
         gratedCheese.SetActive(false);
-        bowl.SetActive(false);
+        spilledPepper.SetActive(false);
+        eggmix.SetActive(false);
+        bowl1.SetActive(false);
         yield return new WaitForSeconds(2f);
 
         whiskObject.GetComponent<Animator>().SetBool("whisk", false);
@@ -307,26 +313,35 @@ public class CarabonaraSequenceManager : MonoBehaviour
     private IEnumerator playSequence5()
     {
         //Move the meat to a pan and cook it
-        Debug.Log("Playing sequence for step 5: " + carbonaraRecipe.stepsList[5].stepName);
-        choppedMeat.SetActive(true);
+        Debug.Log("Playing sequence for step 6: " + carbonaraRecipe.stepsList[5].stepName);
+        choppedMeat2.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        cookedMeat.SetActive(true);
+        choppedMeat2.SetActive(false);
         yield return null;
     }
     private IEnumerator playSequence6()
     {
         //pour water into a pot and wait for it to boil
-        Debug.Log("Playing sequence for step 6: " + carbonaraRecipe.stepsList[6].stepName);
-        choppedMeat.SetActive(false);  
-        cookedMeat.SetActive(true);
+        Debug.Log("Playing sequence for step 7: " + carbonaraRecipe.stepsList[6].stepName);
+        water.SetActive(true);
+        water.GetComponent<Animator>().SetTrigger("Pouring");
+        yield return new WaitForSeconds(1f);
+        water.SetActive(true);
+        hotwater.SetActive(true);
         yield return null;
     }
     private IEnumerator playSequence7()
     {
-        Debug.Log("Playing sequence for step 7: " + carbonaraRecipe.stepsList[7].stepName);
+        Debug.Log("Playing sequence for step 8: " + carbonaraRecipe.stepsList[7].stepName);
         //place noodles into water and stir them until they are cooked
+        pasta.SetActive(true);
+        //poor funtion here
+
         spoonObject.GetComponent<Animator>().SetBool("potMix", true);
         spoonObject.GetComponent<Animator>().SetBool("reset", true);
         yield return new WaitForSeconds(8f);
-
+        cookedPastaWater.SetActive(true);
         spoonObject.GetComponent<Animator>().SetBool("potMix", false);
         spoonObject.GetComponent<Animator>().SetBool("reset", false);
         yield return null;
@@ -334,54 +349,81 @@ public class CarabonaraSequenceManager : MonoBehaviour
     private IEnumerator playSequence8()
     {
         //collect pasta water
-        Debug.Log("Playing sequence for step 8: " + carbonaraRecipe.stepsList[8].stepName);
+        Debug.Log("Playing sequence for step 9: " + carbonaraRecipe.stepsList[8].stepName);
+        cookedPastaWater.SetActive(true);
+        cookedPastaWater.GetComponent<Animator>().SetBool("collect", true);
+        yield return new WaitForSeconds(2f);
+        cookedPastaWater.GetComponent<Animator>().SetBool("collect", false);
         yield return null;
     }
     private IEnumerator playSequence9()
     {
-        Debug.Log("Playing sequence for step 9: " + carbonaraRecipe.stepsList[9].stepName);
+        Debug.Log("Playing sequence for step 10: " + carbonaraRecipe.stepsList[9].stepName);
         //Collect noodles
+        bowl2.SetActive(true);
         spoonObject.GetComponent<Animator>().SetBool("scoop", true);
         spoonObject.GetComponent<Animator>().SetBool("reset", true);
         yield return new WaitForSeconds(8f);
         spoonObject.GetComponent<Animator>().SetBool("scoop", false);
         spoonObject.GetComponent<Animator>().SetBool("reset", false);
         cookedPasta.SetActive(true);
+        bowl2.SetActive(false);
+        cookedPasta.SetActive(false);
         yield return null;
     }
     private IEnumerator playSequence10()
     {
         //place noodles in the pan with the meat 
-        Debug.Log("Playing sequence for step 10: " + carbonaraRecipe.stepsList[10].stepName);
+        Debug.Log("Playing sequence for step 11: " + carbonaraRecipe.stepsList[10].stepName);
+        cookedPastaOutOfWater2.SetActive(true);
+        //pour function here
+        cookedPastaOutOfWater2.GetComponent<Animator>().SetBool("idk", true);
+        yield return new WaitForSeconds(2f);
+        cookedPastaOutOfWater2.GetComponent<Animator>().SetBool("idk", false);
+        cookedPastaOutOfWater2.SetActive(false);
+        cookedPasta.SetActive(true);
         yield return null;
     }
     private IEnumerator playSequence11()
     {
         //pour the pasta water
-        Debug.Log("Playing sequence for step 11: " + carbonaraRecipe.stepsList[11].stepName);
+        Debug.Log("Playing sequence for step 12: " + carbonaraRecipe.stepsList[11].stepName);
+        cookedPastaOutOfWater2.SetActive(true);
+        
+        //yield return new WaitForSeconds(2f);
+        
+        //pour function here
         yield return null;
     }
     private IEnumerator playSequence12()
     {
         //mix
-        Debug.Log("Playing sequence for step 12: " + carbonaraRecipe.stepsList[12].stepName);
+        Debug.Log("Playing sequence for step 13: " + carbonaraRecipe.stepsList[12].stepName);
         spoonObject.GetComponent<Animator>().SetBool("panMix", true);
         spoonObject.GetComponent<Animator>().SetBool("reset", true);
         yield return new WaitForSeconds(8f);
+        almostMadeCarbonara.SetActive(true);
+        cookedMeat.SetActive(false);
+        cookedPastaOutOfWater2.SetActive(false);
         spoonObject.GetComponent<Animator>().SetBool("panMix", false);
-        spoonObject.GetComponent<Animator>().SetBool("reset", false);
+        spoonObject.GetComponent<Animator>().SetBool("reset", false);   
         yield return null;
     }
     private IEnumerator playSequence13()
     {
         //pour cheese mix made in step 4
-        Debug.Log("Playing sequence for step 13: " + carbonaraRecipe.stepsList[13].stepName);
+        Debug.Log("Playing sequence for step 14: " + carbonaraRecipe.stepsList[13].stepName);
+        cheeseMix2.SetActive(true);
+        cheeseMix2.GetComponent<Animator>().SetBool("idk2", true);
+        yield return new WaitForSeconds(2f);
+        cheeseMix2.GetComponent<Animator>().SetBool("idk2", false);
+        cheeseMix2.SetActive(false);
         yield return null;
     }
     private IEnumerator playSequence14()
     {
         //mix
-        Debug.Log("Playing sequence for step 14: " + carbonaraRecipe.stepsList[14].stepName);
+        Debug.Log("Playing sequence for step 15: " + carbonaraRecipe.stepsList[14].stepName);
         spoonObject.GetComponent<Animator>().SetBool("panMix", true);
         spoonObject.GetComponent<Animator>().SetBool("reset", true);
         yield return new WaitForSeconds(8f);
@@ -391,6 +433,7 @@ public class CarabonaraSequenceManager : MonoBehaviour
     {
         //Serve on plate
         Debug.Log("Playing sequence for step 16: " + carbonaraRecipe.stepsList[15].stepName);
+        almostMadeCarbonara.SetActive(false);
         carbonara.SetActive(true);
         endLevelPanel.SetActive(true);
         yield return null;
